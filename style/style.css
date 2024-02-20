@@ -1,1 +1,303 @@
-/*# sourceMappingURL=style.css.map */
+/*         Font-family                 */
+/*          Background   Color           */
+/*            Button     Color          */
+/*            Text color                */
+/*            Background                */
+/*           Border-radius               */
+.input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+.input-container .login-box {
+  background: black;
+  padding: 50px;
+  border-radius: 26px;
+  color: white;
+  font-size: 30px;
+  line-height: 20px;
+}
+.input-container .login-box p {
+  font-weight: 600;
+}
+.input-container .login-box #login-btn {
+  background: rgb(202, 131, 0);
+  padding: 5px;
+  width: 70px;
+  border-radius: 26px;
+  border: none;
+  margin-top: 10px;
+  color: white;
+}
+.input-container .login-box #login-btn:hover {
+  background-color: green;
+}
+.input-container .login-box #signup-btn {
+  background: rgb(202, 131, 0);
+  padding: 5px;
+  width: 70px;
+  border-radius: 26px;
+  border: none;
+  margin-top: 10px;
+  color: white;
+}
+.input-container .login-box #signup-btn:hover {
+  background-color: green;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+.nav-1 {
+  width: 100%;
+  border-bottom: solid 3px black;
+}
+.nav-1 ul {
+  float: right;
+  margin-right: 20px;
+}
+.nav-1 ul li {
+  display: inline-block;
+  line-height: 30px;
+  margin: 0 5px;
+}
+.nav-1 ul li a {
+  color: black;
+  font-family: Helvetica, sans-serif;
+  padding: 7px 13px;
+  border-radius: 10px;
+}
+.nav-1 ul li a:hover {
+  background: black;
+  color: white;
+  transition: 0.5s;
+}
+
+.checkbtn {
+  font-size: 20px;
+  color: black;
+  float: right;
+  line-height: 40px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+@media (max-width: 952px) {
+  label.logo {
+    font-size: 20px;
+    padding-left: 50px;
+  }
+  .nav-1 ul li a {
+    font-size: 10px;
+  }
+}
+@media (max-width: 858px) {
+  .checkbtn {
+    display: block;
+  }
+  .nav-1 ul {
+    position: fixed;
+    width: 100%;
+    height: 300px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+    background: black;
+  }
+  .nav-1 ul li a {
+    color: azure;
+    font-size: 12px;
+  }
+  .nav-1 ul li a:hover {
+    background: white;
+    color: black;
+  }
+  .nav-1 ul li {
+    padding: 10px;
+  }
+  .nav-1 ul li:hover {
+    color: black;
+  }
+  .nav-1 ul li {
+    display: block;
+  }
+  #check:checked ~ ul {
+    left: 0;
+  }
+}
+label.logo {
+  color: black;
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 40px;
+  padding-left: 20px;
+}
+
+.location-in-website {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+.location-in-website .location-indice {
+  background: black;
+  font-family: Helvetica, sans-serif;
+  color: white;
+  padding: 5px;
+}
+.location-in-website .triangle-right {
+  height: 0;
+  width: 0;
+  border-bottom: 28px solid transparent;
+  border-left: 25px solid black;
+}
+.location-in-website .triangle-left {
+  height: 0;
+  width: 0;
+  border-bottom: 28px solid transparent;
+  border-right: 25px solid black;
+}
+
+.first-section {
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.first-section .presentation-index-left {
+  min-width: 280px;
+  max-width: 500px;
+  border: black solid 1px;
+  border-radius: 26px;
+  padding: 50px;
+}
+.first-section .presentation-index-left h1 {
+  padding-bottom: 20px;
+  font-size: 50px;
+}
+.first-section .presentation-index-left h3 {
+  padding-bottom: 10px;
+  color: grey;
+  font-weight: 400;
+}
+.first-section .video-container {
+  position: relative;
+  min-width: 300px;
+  min-height: 300px;
+  overflow: hidden;
+}
+.first-section .video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: -1;
+}
+.first-section .presentation-index-right {
+  /*border:  solid 1px $border-line-color;*/
+  border-bottom-left-radius: 26px;
+  border-top-right-radius: 26px;
+  max-width: 800px;
+  min-width: 280px;
+  min-height: 200px;
+}
+.first-section .presentation-index-right .content {
+  position: relative;
+  z-index: 1;
+}
+.first-section .presentation-index-right .box-rigth {
+  width: 150px;
+}
+.first-section .presentation-index-right h1 {
+  color: white;
+}
+.first-section .presentation-index-right .rectangle {
+  min-width: 300px;
+  max-width: 600px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.first-section .presentation-index-right .square {
+  min-height: 100px;
+  min-width: 140px;
+}
+.first-section .presentation-index-right .first-rect {
+  border-top-right-radius: 26px;
+}
+.first-section .presentation-index-right .square-right-top {
+  border-top-right-radius: 26px;
+}
+.first-section .presentation-index-right .square-left-top {
+  height: 0;
+  width: 0;
+  border-top: 100px solid white;
+  border-right: 140px solid transparent;
+}
+.first-section .presentation-index-right .fourth-rect {
+  border-bottom-left-radius: 26px;
+}
+.first-section .presentation-index-right .square-left-bottom {
+  border-bottom-left-radius: 26px;
+}
+.first-section .presentation-index-right .square-right-bottom {
+  height: 0;
+  width: 0;
+  border-bottom: 100px solid white;
+  border-left: 140px solid transparent;
+}
+
+h1, h3 {
+  font-family: Helvetica, sans-serif;
+  text-align: center;
+}
+
+p {
+  font-family: "Lucida Console", "Courier New", monospace;
+  text-align: justify;
+  font-size: 12px;
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  border: solid 1px black;
+}
+footer ul li {
+  font-weight: 1200;
+  font-size: 10px;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+footer ul li a {
+  color: black;
+  font-weight: 400;
+}
+footer ul li :hover {
+  font-weight: bolder;
+  color: black;
+}
+footer .copyright-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}/*# sourceMappingURL=style.css.map */

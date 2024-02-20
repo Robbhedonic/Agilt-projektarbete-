@@ -4,55 +4,97 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
     <header>
-      <nav>
-        <div class="nav-left-logo"></div>
-        <div>
-          <ul>
-            <li><a href="">About us</a></li>
-            <li><a href="">Contact us</a></li>
-            <li><a href="">Login</a></li>
-            <li><a href="">Login</a></li>
-            <li><a href="">Sign up</a></li>
-          </ul>
-        </div>
+      <nav class="nav-1">
+        <input type="checkbox" id="check" />
+        <label for="check" class="checkbtn">
+          <i class="fa-solid fa-bars"></i>
+        </label>
+        <label class="logo">FixTime</label>
+
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="signup.html">Sign up</a></li>
+        </ul>
+      </nav>
+
+      <nav class="location-in-website">
+        <div class="triangle-left"></div>
+        <div class="location-indice"><h4>Home</h4></div>
+        <div class="triangle-right"></div>
       </nav>
     </header>
     <main>
-      <h1>Welcome to Fixtime!</h1>
-      <h2>All your activities, all your jobbies and goals in one place.</h2>
-      <p>
-        All your activities, all your jobbies and goals in one place. In Fixtime
-        you can organize your entire day-to-day agenda to help you achieve your
-        goals and objectives in life.
-      </p>
+      <section class="first-section">
+        <div class="presentation-index-left">
+          <h1>Welcome to Fixtime!</h1>
+          <h3>All your activities, all your jobbies and goals in one place.</h3>
+          <p>
+            All your activities, all your jobbies and goals in one place. In
+            Fixtime you can organize your entire day-to-day agenda to help you
+            achieve your goals and objectives in life.
+          </p>
+        </div>
+
+        <div class="presentation-index-right video-container">
+          <video autoplay muted loop>
+            <source src="images/running.mp4" type="video/mp4" />
+          </video>
+          <div class="content">
+            <div class="rectangle first-rect">
+              <div class="square square-left-top"></div>
+              <div class="square square-right-top"></div>
+            </div>
+            <div class="rectangle"></div>
+            <div class="rectangle">
+              <div class="box-rigth">
+                <h1>Your dreams and goals in time!</h1>
+              </div>
+            </div>
+            <div class="rectangle fourth-rect">
+              <div class="square square-left-bottom"></div>
+              <div class="square square-right-bottom"></div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-    <aside></aside>
+
     <footer>
       <div>
-        <h2>Logo</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="signup.html">Sign up</a></li>
+        </ul>
       </div>
 
-      <div>
-        <ul>
-          <li><a href="">Login</a></li>
-          <li><a href="">Sign up</a></li>
-        </ul>
+      <div class="copyright-box">
+        <div><p>Fixtime</p></div>
+        <div><p>Copyright</p></div>
+        <div><p>© 2024</p></div>
       </div>
       <div>
-        <ul>
-          <li>About us</li>
-          <li>Contact</li>
-          <li></li>
-        </ul>
+        <h3>Fixtime</h3>
       </div>
     </footer>
 
     <script src="index.js"></script>
-    <script src="script.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

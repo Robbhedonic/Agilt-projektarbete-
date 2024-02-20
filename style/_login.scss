@@ -1,0 +1,50 @@
+.input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+    .login-box{
+        background: $secondary-background-color;
+        padding: 50px;
+        border-radius: $border-radius;
+        color: $third-text-color;
+        font-size: 30px;
+        line-height: 20px;
+        p{
+            font-weight: 600;
+        }
+        #login-btn{
+            background: rgb(202, 131, 0);
+            padding: 5px;
+            width: 70px;
+            border-radius: $border-radius;
+            border: none;
+            margin-top: 10px;
+            color: $third-text-color;
+            &:hover{
+                background-color: green;
+            }
+
+        }
+        #signup-btn {
+            background: rgb(202, 131, 0);
+            padding: 5px;
+            width: 70px;
+            border-radius: $border-radius;
+            border: none;
+            margin-top: 10px;
+            color: $third-text-color;
+        
+            &:hover {
+                background-color: green;
+            }
+        
+        }
+
+
+       
+
+    }
+
+}

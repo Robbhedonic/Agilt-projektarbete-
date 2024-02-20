@@ -3,7 +3,82 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <nav class="nav-1">
+        <input type="checkbox" id="check" />
+        <label for="check" class="checkbtn">
+          <i class="fa-solid fa-bars"></i>
+        </label>
+        <label class="logo">FixTime</label>
+
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="signup.html">Sign up</a></li>
+        </ul>
+      </nav>
+
+      <nav class="location-in-website">
+        <div class="triangle-left"></div>
+        <div class="location-indice"><h4>Login</h4></div>
+        <div class="triangle-right"></div>
+      </nav>
+    </header>
+
+    <main>
+      <form class="input-container">
+        <div class="login-box">
+          <div class="block-row">
+            <p>Username:</p>
+            <input type="text" id="username-login" placeholder="username" />
+          </div>
+          <div class="block-row">
+            <p>e-mail:</p>
+            <input type="text" id="email-login" placeholder="email" />
+          </div>
+          <div class="block-row">
+            <p>Password:</p>
+            <input type="password" id="password-login" placeholder="password" />
+          </div>
+          <input type="submit" value="log in" id="login-btn" />
+        </div>
+      </form>
+    </main>
+
+    <footer>
+      <div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="signup.html">Sign up</a></li>
+        </ul>
+      </div>
+
+      <div class="copyright-box">
+        <div><p>Fixtime</p></div>
+        <div><p>Copyright</p></div>
+        <div><p>© 2024</p></div>
+      </div>
+      <div>
+        <h3>Fixtime</h3>
+      </div>
+    </footer>
+    <script src="login_in.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
