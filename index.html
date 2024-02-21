@@ -3,11 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Agil-Projectarbete</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/662bd25ad9.js" crossorigin="anonymous"></script>
+    <!--<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <button>click me</button>
-    <script src="script.js"></script>
+    <!-- Container -->
+  <div class="container">
+    <div class="forms_container">
+        <div class="signin_signup">
+            <form action="" class="sign_in-form">
+               <h2 class="title">Login</h2>
+               <div class="input_field">
+                <i class="fa fa-user"></i>
+                <input type="text" placeholder="Username">
+               </div>
+               <div class="input_field">
+                <i class="fa fa-lock"></i>
+                <input type="password" placeholder="password">
+               </div>
+               <input type="submit" value="Login" class="btn solid">
+               <p class="social_text">OR</p>
+               <div class="social_media">
+                <a href="#" class="social_icon">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a href="#" class="social_icon">
+                    <i class="fa fa-google"></i>
+                </a>
+                <a href="#" class="social_icon">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+                <a href="#" class="social_icon">
+                    <i class="fa fa-x"></i>
+                </a>
+               </div>
+            </form>
+
+            <form action="" class="sign_up-form">
+                <h2 class="title">Registeration</h2>
+               <div class="input_field">
+                <i class="fa fa-user"></i>
+                <input type="text" placeholder="Username">
+               </div>
+               <div class="input_field">
+                <i class="fa fa-envelope"></i>
+                <input type="email" placeholder="Emil">
+               </div>
+               <div class="input_field">
+                <i class="fa fa-lock"></i>
+                <input type="password" placeholder="password">
+               </div>
+               <input type="submit" value="Sign up" class="btn solid">
+               <p class="social_text">OR</p>
+               <div class="social_media">
+                <a href="#" class="social_icon">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a href="#" class="social_icon">
+                    <i class="fa fa-google"></i>
+                </a>
+                <a href="#" class="social_icon">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+                <a href="#" class="social_icon">
+                    <i class="fa fa-x"></i>
+                </a>
+               </div>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="panels-container">
+        <div class="panel right_panel">
+            <div class="content">
+                <h3>Har du redan registerat</h3>
+                <p></p>
+                <button id="sign_in-btn" class="btn trasparent">Sign in</button>
+            </div>
+            <img src="login_re_4vu2.svg"  class="image" alt="sign in image">
+        </div>
+        <div class="panel left_panel">
+            <div class="content">
+                <h3>Register dig här</h3>
+                <p>Klick på register för att registera dig</p>
+                <button id="sign_up-btn" class="btn trasparent">Register</button>
+            </div>
+            <img src="sign_up_n6im.svg"  class="image" alt="sign up image">
+        </div>
+    </div>
+
+  </div>
+    
 </body>
 </html>

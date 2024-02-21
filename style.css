@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    direction: rtl;
+    font-family: sans-serif;
+    
+}
+
+.container{ 
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+    overflow: hidden;
+}
+.container::before{
+    content: '';
+    position: absolute;
+    width: 2000px;
+    height: 2000px;
+    border-radius: 50%;
+    background: linear-gradient(-45deg,#ef6c0e,#ff8832);
+    top: -10%;
+    right: 48%;
+    transform: translateY(-50%);
+    z-index: 6;
+    transition: 2s ease-in-out;
+    
+}
+.forms_container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+   
+}
+.signin_signup{
+   position: absolute;
+   top: 50%;
+   left: 75%;
+   width: 50%;
+   transform: translate(-50%,-50%);
+   display: grid;
+   grid-template-columns: 1fr; 
+   z-index: 5;
+   transition: 1s 0.7s ease-in-out;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    padding: 0 5rem;
+    overflow: hidden;
+    transition: 0.2s 0.7s ease-in-out;
+}
+form.sign_in-form{
+    z-index: 2;
+}
+form.sign_up-form{
+    z-index: 1;
+    opacity: 0;
+}
+.title{
+    font-size: 2.2rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+.input_field{
+    max-width: 380px;
+    width: 100%;
+    height: 55px;
+    background-color: #f0f0f0;
+    display: grid;
+    grid-template-columns: 15% 85%;
+    margin: 10px 0;
+    padding: 0 0.4rem;
+    border-radius: 55px;
+}
+.input_field i{
+    text-align: center;
+    line-height: 55px;
+    color: #acacac;
+    font-size: 1.1rem;
+    
+}
+input,button{
+    font-family: sans-serif;
+}
+.input_field input{
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 1.1rem;
+    color: #333;
+}
+.input_field input::placeholder{
+    color: #aaa;
+    font-weight: 500;
+}
+.btn{
+    width: 150px;
+    height: 49px;
+    border: none;
+    outline: none;
+    border-radius: 49px;
+    cursor: pointer;
+    background-color: #ef6c0e;
+    color: #fff;
+    font-weight: 600;
+    margin: 10px 0;
+    transition: 1s;
+}
+.btn:hover{
+    background-color: #ff8832;
+}
+.social_text{
+    padding: 0.7rem 0;
+    font-size: 0.95rem;
+}
+.social_media{
+    display: flex;
+    justify-content: center;
+
+}
+.social_icon{
+    height: 46px;
+    width: 46px;
+    border: 1px solid #333;
+    margin: 0 0.45rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #333;
+    font-size: 1.1rem;
+    transition: 0.5s;
+    text-decoration: none;
+
+}
+.social_icon:hover{
+    color: #ef6c0e;
+    border-color: #ff8832;
+}
+.panels-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.panel{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    text-align: center;
+    z-index: 7;
+}
+.right_panel{
+    padding: 3rem 12% 2rem 17%; 
+    pointer-events: none;
+}
+.left_panel{
+    padding: 3rem 17% 2rem 12%; 
+    pointer-events: all;
+}
+.panel .content{
+    columns: #fff;
+    transition: 0.9s 0.5s ease-in-out;
+
+}
+.panel h3{
+    font-weight: 600;
+    line-height: 1;
+    font-size: 1.5rem;
+}
+.panel p{
+    padding: 0.7rem;
+    font-size: 0.95rem;
+}
+.btn.trasparent{
+    margin: 0;
+    background: none;
+    border: 2px solid #fff;
+    width: 130px;
+    height: 41px;
+    font-weight: 600;
+    font-size: 0.8rem;
+}
+
+.image{
+    width: 100%;
+    transition: 1.2s 0.3s ease-in-out;
+}
+.right_panel .content,
+.right_panel .image{
+   transform: translateX(800px);
+}
+.container.sign_up-mode::before{
+    transform: translate(100%,-50%);
+}
+.container.sign_up-mode .left_panel .content,
+.container.sign_up-mode .left_panel .image{
+    transform: translateX(-800px);
+}
+.container.sign_up-mode .right_panel .content,
+.container.sign_up-mode .right_panel .image{
+    transform: translateX(0px);
+}
+.container.sign_up-mode .right_panel{
+    pointer-events: all;
+}
+.container.sign_up-mode .left_panel{
+    pointer-events: none;
+}
+.container.sign_up-mode .signin_signup{
+    left: 25%;
+}
+.container.sign_up-mode form.sign_in-form{
+    z-index: 1;
+    opacity: 0;
+}
+.container.sign_up-mode form.sign_up-form{
+    z-index: 2;
+    opacity: 1;
+}
+@media (max-width:870px){
+    .container{
+        min-height: 800px;
+        height: 100vh;
+    }
+    .container::before
+    {
+        width: 1500px;
+        height: 1500px;
+        left: 63%;
+        bottom: 69%;
+        transform: translateX(-50%);
+        right: initial;
+        top: initial;
+        transition: 2s ease-in-out;
+    }
+    
+    .signin_signup{
+        width: 100%;
+        left: 50%;
+        top: 95%;
+        transform: translate(-50%,-100%);
+        transition: 1s 0.7s ease-in-out;
+    }
+    .panels-container{
+       
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr 1fr;
+    }
+    .panel{
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        padding: 2.5rem 8%;
+    }
+    .left_panel{
+        grid-row: 1/2;
+    }
+    .right_panel{
+        grid-row: 3/4;
+    }
+    .image{
+        width: 200px;
+        transition: 0.9s 0.5s ease-in-out;
+    }
+    .panel .content{
+        padding-left: 15%;
+        transition: 0.9s 0.7s ease-in-out;
+    }
+    .panel h3{
+        font-size: 1.2rem;
+        
+    }
+    .panel p{
+        font-size: 0.8rem;
+        padding: 0.5rem 0;
+    }
+    .btn.trasparent{
+        width: 110px;
+        height: 35px;
+        font-size: 0.7rem;
+    }
+    .right_panel .content,
+    .right_panel .image{
+        transform: translateY(300px);
+
+    }
+    .container.sign_up-mode::before{
+         transform: translate(-50%,100%);
+         left: 66%;
+         bottom: 33%;
+    }
+   .container.sign_up-mode .left_panel .image,
+   .container.sign_up-mode .left_panel .content{
+    transform: translateY(-300px);
+   }
+   .container.container.sign_up-mode .signin_signup{
+    left: 50%;
+    top: 5%;
+    transform: translate(-50%,0);
+   }
+}
+@media(max-width:580px){
+    form{
+        padding: 0 1.5rem;
+    }
+    .image{
+        display: none;
+    }
+    .panel .content{
+        padding: 0.5rem 1rem;
+    }
+    .container.sign_up-mode::before{
+        left: 50%;
+        bottom: 25%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

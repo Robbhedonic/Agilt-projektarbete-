@@ -1,7 +1,10 @@
-let getdata = async(apilink) => {
-    let data = await fetch(apilink)
-    let json = await data.json()
-    console.log(data)
-}
+let singInbtn=document.querySelector("#sign_in-btn");
+let singUpbtn=document.querySelector("#sign_up-btn");
+let container=document.querySelector(".container");
 
-getdata("https://zenquotes.io/api/quotes/")
+singUpbtn.addEventListener('click',()=>{
+    container.classList.add("sign_up-mode");
+});
+singInbtn.addEventListener('click',()=>{
+    container.classList.remove("sign_up-mode");
+});
