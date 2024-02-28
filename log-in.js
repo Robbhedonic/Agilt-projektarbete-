@@ -55,14 +55,14 @@ let getinfofromlocalstorage = (e) => {
 
 
             if (usernameSignin.value !== username) {
-                usernameSignin.nextElementSibling.innerHTML = "username is not exist"
+                usernameSignin.nextElementSibling.innerHTML = "username is wrong or not exist"
                 usernameSignin.nextElementSibling.style.display = "block"
                 usernameSignin.nextElementSibling.style.color = "red"
             } else {
                 usernameSignin.nextElementSibling.style.display = "none"
             }
             if (emailSignin.value !== email) {
-                emailSignin.nextElementSibling.innerHTML = "email is not exist"
+                emailSignin.nextElementSibling.innerHTML = "email is wrong or not exist"
                 emailSignin.nextElementSibling.style.display = "block"
                 emailSignin.nextElementSibling.style.color = "red"
             } else {
@@ -81,7 +81,7 @@ let getinfofromlocalstorage = (e) => {
 
             //console.log("ok")
             setTimeout(() => {
-                window.location = "index.html"
+                window.location = "user.html"
             }, 2000)
 
         }

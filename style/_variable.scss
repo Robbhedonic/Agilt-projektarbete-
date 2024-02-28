@@ -20,10 +20,13 @@ $button-hover-color:green;
 $primary-text-color:white;
 $secondary-text-color:rgb(220, 220, 220);
 $third-text-color:white;
+$four-text-color:black;
 
 
 /*            Background                */
 $border-line-color:black;
+$border-line-color-a:white;
+
 
 
 /*           Border-radius               */
@@ -42,7 +45,7 @@ $second-slice-calendar:rgba(211, 213, 214, 0.84);
 $third-slice-calendar:rgb(153, 153, 153);
 
 
-$bg-main-calendar:rgb(98, 98, 101, 0.1);
+$bg-main-calendar:rgba(86, 86, 86, 0.1);
 
 $text-calendar: rgb(135, 136, 149) ;
 
@@ -53,6 +56,9 @@ $date-event:rgb(135, 136, 149);;
 $line-square-calendar:rgb(245, 245, 245);
 
 $plus-create-event: rgb(135, 136, 149);
+
+/* backgrounf calendar */
+$bg-timer: rgb(39, 40, 57);
 
 
 

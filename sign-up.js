@@ -61,7 +61,7 @@ let setLocalStorageInfo = (e) => {
         localStorage.emailinfo = emailSignup.value;
         localStorage.passwordinfo = passwordSignup.value
         setTimeout(() => {
-            window.location = "log in.html"
+            window.location = "log-in.html"
         }, 2000)
     }
 
