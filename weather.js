@@ -45,7 +45,7 @@ let getWeatherDetails = (name, lat, lon) => {
                             newCurrentdiv.innerHTML =
                                 `
                         <h2>${name}</h2>   
-    <h3> Sate:${element.dt_txt.split(" ")[0]}</h3>
+    <h3> Date: ${element.dt_txt.split(" ")[0]}</h3>
             <img src="" alt="" class="weather-icon">
             <h1 class="temp">${temp}°C</h1>
             <p>${element.weather[0].main}</p>
@@ -78,7 +78,7 @@ let getWeatherDetails = (name, lat, lon) => {
                             newDailydiv.className = "section"
                             newDailydiv.innerHTML = `
                     
-                        <h3> date:${element.dt_txt.split(" ")[0]}</h3>
+                        <h3> Date: ${element.dt_txt.split(" ")[0]}</h3>
                                 <img src="https://openweathermap.org/img/wn/${element.weather[0].icon}@2x.png" alt="" class="weather-icon">
                                 <h1 class="temp">${temp}°C</h1>
                                 <p>${element.weather[0].main}</p>
