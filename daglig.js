@@ -246,7 +246,7 @@ function sortering() {
             // DataList.innerHTML = ""
 
             // acitvityDiv.innerHTML = ""
-            if (e.target.value === "Rising") {
+            if (e.target.value === "stigande") {
                 let sorteringStigande = activities.sort((a, b) => {
                     return a.number - b.number
 
@@ -259,7 +259,7 @@ function sortering() {
                 })
 
 
-            } else if (e.target.value === "Falling") {
+            } else if (e.target.value === "fallande") {
                 let sorteringFallande = activities.sort((a, b) => {
                     return b.number - a.number
 
@@ -289,7 +289,7 @@ function sorteringByName() {
             DataList.innerHTML = ""
 
             //acitvityDiv.innerHTML = ""
-            if (box.value === "High") {
+            if (box.value === "stigande") {
 
                 let sorteringALfabet = activities.sort((a, b) => {
                     if (a.pieriorty < b.pieriorty) {
@@ -307,7 +307,7 @@ function sorteringByName() {
 
                 })
             }
-            if (box.value === "Low") {
+            if (box.value === "fallande") {
 
                 let sorteringALfabet = activities.sort((a, b) => {
                     if (a.pieriorty > b.pieriorty) {

@@ -44,6 +44,14 @@
                     transition: 0.5s;
                 }
             }
+            p{
+                color: $primary-text-color;
+                    font-family: $title-family-font;
+                
+                    padding: 7px 13px;
+                    border-radius: 10px;
+
+            }
         }
      }
   
@@ -384,7 +392,7 @@ footer{
     width: 340px;
     display: flex;
     flex-direction: column;
-    justify-content:baseline;
+    justify-content:center;
     align-items: center;
 
     .go-to-pomodoro {
@@ -460,5 +468,10 @@ iframe{
 .user-name-profile{
     color: $primary-text-color;
     width: 60px;
+    text-align: center;
+}
+.user-name{
+    color: $primary-text-color;
+    width: 50px;
     text-align: center;
 }
