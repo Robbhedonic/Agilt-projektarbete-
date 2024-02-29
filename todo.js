@@ -56,7 +56,6 @@ let inputDeadline = document.querySelector("#deadline")
 let inputTidestimat = document.querySelector("#tidestimat")
 let inputStatus = document.querySelector("#status")
 let inputkategori = document.querySelector("#kategori")
-let checkBoxs = document.querySelectorAll(".checkbox")
 let addBtn = document.querySelector(".btn")
 let listSection = document.querySelector(".list-section")
 let dataList = document.querySelector("#data")
@@ -306,26 +305,110 @@ function createNewDiv(item, index) {
 
 
 // filter  function with checkbox
-function filterfun() {
 
-    /// function filter
+// filter by status
+function filterfunByStatus() {
 
-    checkBoxs.forEach((box) => {
+
+    let checkboxvalue = []
+    let checkboxs = document.querySelectorAll(".checkbox")
+    checkboxs.forEach((box) => {
+
         box.addEventListener("click", (e) => {
             dataList.innerHTML = ""
-                //listSection.innerHTML = ""
-            let filteritem = details.filter((el) => {
-                return ((el.kategori === e.target.value || e.target.value === "any") || (el.status === e.target.value || e.target.value === "all"))
-            })
-            filteritem.forEach((item, index) => {
-                createNewDiv(item, index)
-            })
+            if (e.target.checked == true) {
+                //console.log("hi")
+                dataList.innerHTML = ""
+                checkboxvalue.push(box.value)
+
+                checkboxvalue.forEach((el) => {
+                    dataList.innerHTML = ""
+
+                    let filteritem = details.filter((el) => {
+                        // console.log(el)
+                        return (checkboxvalue.includes(el.status))
+
+                    })
+                    filteritem.forEach((item, index) => {
+                        createNewDiv(item, index)
+                    })
+                })
+            }
+            // delete the files which i didnot need
+            else {
+                dataList.innerHTML = ""
+                checkboxvalue = checkboxvalue.filter((el) => {
+                    return el !== e.target.value
+                })
+                let deleteFiltered = details.filter((element) => {
+                    //console.log(element)
+                    return (checkboxvalue.includes(element.status))
+                })
+                deleteFiltered.forEach((item, index) => {
+                    createNewDiv(item, index)
+                })
+            }
+
         })
+        setdata()
+
+
     })
-    setdata()
+}
+filterfunByStatus()
+
+
+// filter by kategori
+
+function filterfunByKategori() {
+
+    let checkboxvalue = []
+    let checkboxs = document.querySelectorAll(".checkbox1")
+    checkboxs.forEach((box) => {
+
+        box.addEventListener("click", (e) => {
+            dataList.innerHTML = ""
+            if (e.target.checked == true) {
+                console.log("hi")
+                dataList.innerHTML = ""
+                checkboxvalue.push(box.value)
+
+                checkboxvalue.forEach((el) => {
+                    dataList.innerHTML = ""
+
+                    let filteritem = details.filter((el) => {
+                        // console.log(el)
+                        return (checkboxvalue.includes(el.kategori))
+
+                    })
+                    filteritem.forEach((item, index) => {
+                        createNewDiv(item, index)
+                    })
+                })
+            }
+            // delete the files which i didnot need
+            else {
+                dataList.innerHTML = ""
+                checkboxvalue = checkboxvalue.filter((el) => {
+                    return el !== e.target.value
+                })
+                let deleteFiltered = details.filter((element) => {
+                    //console.log(element)
+                    return (checkboxvalue.includes(element.kategori))
+                })
+                deleteFiltered.forEach((item, index) => {
+                    createNewDiv(item, index)
+                })
+            }
+
+
+        })
+
+        setdata()
+    })
 }
 
-filterfun()
+filterfunByKategori()
 
 //end of function
 

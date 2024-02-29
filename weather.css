@@ -1,42 +1,36 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
+.main-weather-a {
+    background: black;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    gap: 20px
+}
 
 .card {
-    width: 300px;
-
-    color: $primary-text-color;
-    margin-top: 10px;
-    border-radius: $border-radius;
+    width: 100%;
+    max-width: 470px;
+    background: linear-gradient(135deg, #00feba, #5b548a);
+    color: #fff;
+    margin: 100px auto 0;
+    border-radius: 20px;
     padding: 35px 0px;
     text-align: center;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     flex-direction: column;
-    justify-content: space-evenly;
-    background:rgb(98, 98, 101, 0.1);
-    box-shadow: 0px 0px 16px 0px rgb(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-  
-
-    .icon-weather {
-        font-size: 80px;
-        padding: 20px;
-        color: $primary-text-color;
-    }
-    p{
-        text-align: center;
-    }
-    h1{
-        padding-top:10px ;
-        font-size: 10px ;
-    }
-    h3{
-        font-size: 16px;
-    }
-    h2{
-        padding-top:20px ;
-    }
+    gap: 20px
 }
 
+.main-section {
+    height: 80%;
+}
 
 .search {
     width: 90%;
@@ -46,13 +40,13 @@
 }
 
 .search input {
-    width: 60%;
+    width: 80%;
     border: 0;
     outline: 0;
-    background-color: $primary-background-color;
+    background-color: #ebfffc;
     color: #555;
     padding: 10px 25px;
-    height: 30px;
+    height: 60px;
     border-radius: 30px;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
@@ -66,14 +60,14 @@
 .search button {
     border: 0;
     outline: 0;
-    background: $primary-background-color;
+    background-color: #ebfffc;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
 }
 
@@ -87,12 +81,11 @@
 }
 
 .weather h1 {
-    font-size: 20px;
+    font-size: 3rem;
     font-weight: 500;
 }
 
 .weather h2 {
-    margin-top: 10px;
     font-size: 2rem;
     font-weight: 400;
     margin-top: -10px;
@@ -149,6 +142,7 @@
 
 .daily-weather .section {
     width: 35%;
+    background: linear-gradient(135deg, #00feba, #5b548a);
     height: 500px;
     display: flex;
     flex-direction: column;
@@ -161,11 +155,8 @@
     -o-border-radius: 10px;
     padding: 20px 10px;
     gap: 20px;
-    color: $primary-text-color;
+    color: white;
     text-transform: capitalize;
-    background: rgba(33, 188, 255, 0.1);
-    box-shadow: 0px 0px 16px 0px rgb(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
 }
 
 .daily-weather .section .weather-icon {
@@ -183,12 +174,11 @@
 
 .link {
     cursor: pointer;
-    color: $hover;
+    color: rgb(252, 164, 0);
     display: none;
     font-weight: 800;
-    font-size: 16px;
+    font-size: 1.2rem;
     text-transform: capitalize;
-    width: 150px;
 }
 
 .forecast-container {
@@ -255,7 +245,7 @@
 }
 
 .forecast .fa-solid.fa-chevron-left {
-    color: $primary-text-color;
+    color: white;
     position: absolute;
     top: 50%;
     left: 7%;
@@ -284,7 +274,7 @@
 }
 
 .daily-forecast-close i {
-    color: $primary-text-color;
+    color: white
 }
 
 
@@ -330,4 +320,8 @@
     .daily-weather .section .weather-icon {
         width: 20%;
     }
+}
+.app-w-icon{
+    font-size: 50px;
+    color: white;
 }

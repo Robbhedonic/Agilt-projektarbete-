@@ -47,7 +47,6 @@ let numberInput = document.querySelector("#number");
 let selectPrioritet = document.querySelector("#Prioritet")
 let acitivityBtn = document.querySelector(".add-activity")
 let acitvityDiv = document.querySelector(".acitvitylist")
-let radioBtnFilter = document.querySelectorAll("[name=radio]")
 let sorteringByCheckbox = document.querySelectorAll("[name=checkbox]")
 let DataList = document.querySelector("#data")
 let activities = [];
@@ -189,22 +188,75 @@ function changeQuantity(index, quantity, e) {
 }
 
 // filter function
-function filterByPriority() {
-    radioBtnFilter.forEach((radio) => {
-        radio.addEventListener("click", (e) => {
+// filter by pioriorty
+let radioBtnFilter = document.querySelectorAll("[name=radio]")
+
+function filterfunByPieriorty() {
+
+
+    let checkboxvalue = []
+    radioBtnFilter.forEach((box) => {
+        box.addEventListener("click", (e) => {
             DataList.innerHTML = ""
+            if (e.target.checked == true) {
+                //console.log("hi")
+                DataList.innerHTML = ""
+                checkboxvalue.push(box.value)
 
-            //acitvityDiv.innerHTML = ""
-            let filterPriority = activities.filter((el) => {
-                //console.log(e.target.value)
+                checkboxvalue.forEach((el) => {
+                    DataList.innerHTML = ""
 
-                return el.pieriorty === e.target.value || e.target.value === "all"
-            })
-            filterPriority.forEach((el, index) => {
+                    let filteritem = activities.filter((el) => {
+                        // console.log(el)
+                        return (checkboxvalue.includes(el.pieriorty))
 
-                let createElement =
+                    })
+                    filteritem.forEach((el, index) => {
+                        let createElement =
 
-                    `
+                            `
+                       <tr>
+                       // <th>${index+1}</th>
+    
+                        <th>${el.title}</th>
+                        <th>${el.number}</th>   
+                        <th>${el.pieriorty}</th>
+                           <th>
+                           <div class="counter">
+                                     <span class="minus" onclick="changeQuantity(${index},${el.quantity-1},this)">-</span>
+                                     <span class="num">${el.quantity}</span>
+                                     <span class="plus" onclick="changeQuantity(${index},${el.quantity+1},this)">+</span>
+                            </div>
+                      
+                           </th> 
+                           <th>
+                               <p>action</p>
+                               <button id="delete" onclick="deletetask(${index},this)"><i class="fa-solid fa-trash-can d-icons"></i></button>
+    
+                           </th>
+                       </tr>
+                       `
+
+                        DataList.innerHTML += createElement
+
+                    })
+                })
+            }
+            // delete the files which i didnot need
+            else {
+                DataList.innerHTML = ""
+                checkboxvalue = checkboxvalue.filter((el) => {
+                        return el !== e.target.value
+                    })
+                    //console.log(checkboxvalue)
+                let deleteFiltered = activities.filter((element) => {
+                    //console.log(element)
+                    return (checkboxvalue.includes(element.pieriorty))
+                })
+                deleteFiltered.forEach((el, index) => {
+                    let createElement =
+
+                        `
                    <tr>
                    // <th>${index+1}</th>
 
@@ -227,25 +279,31 @@ function filterByPriority() {
                    </tr>
                    `
 
-                DataList.innerHTML += createElement
+                    DataList.innerHTML += createElement
 
-
-            })
+                })
+            }
 
         })
+        setdata()
+
+
     })
 }
-filterByPriority()
+filterfunByPieriorty()
 
-// sort function by pierioty
+
+//
+
+// sort function by streak
 
 function sortering() {
     sorteringByCheckbox.forEach((box) => {
 
         box.addEventListener("click", (e) => {
             // DataList.innerHTML = ""
+            DataList.innerHTML = ""
 
-            // acitvityDiv.innerHTML = ""
             if (e.target.value === "stigande") {
                 let sorteringStigande = activities.sort((a, b) => {
                     return a.number - b.number
@@ -279,7 +337,7 @@ function sortering() {
 sortering()
 
 
-// sort by name
+// sort by name pierority
 
 let sorteringName = document.querySelectorAll("[name=name-sort]")
 
@@ -288,8 +346,7 @@ function sorteringByName() {
         box.addEventListener("click", (e) => {
             DataList.innerHTML = ""
 
-            //acitvityDiv.innerHTML = ""
-            if (box.value === "stigande") {
+            if (box.value === "A-High") {
 
                 let sorteringALfabet = activities.sort((a, b) => {
                     if (a.pieriorty < b.pieriorty) {
@@ -307,7 +364,7 @@ function sorteringByName() {
 
                 })
             }
-            if (box.value === "fallande") {
+            if (box.value === "C-Low") {
 
                 let sorteringALfabet = activities.sort((a, b) => {
                     if (a.pieriorty > b.pieriorty) {

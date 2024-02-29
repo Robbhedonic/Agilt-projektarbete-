@@ -11,6 +11,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="style/style.css" />
     <title>Document</title>
   </head>
   <body class="dooo oo">
@@ -78,31 +79,12 @@
               <a href="pomodoro.html">Focus</a>
             </button>
           </div>
-          <div class="card">
-            <i class="fa-solid fa-cloud-sun-rain icon-weather"></i>
-            <div class="search">
-              <input
-                type="text"
-                placeholder="enter city name"
-                spellcheck="false"
-                class="input"
-              />
-              <button class="btn">
-                <img src="images/search.png" alt="" />
-              </button>
-            </div>
-            <div class="weather"></div>
-            <p class="link">To See More Forecast Click Here</p>
-          </div>
-          <div class="forecast-container">
-            <div class="forecast">
-              <div class="daily-weather" id="daily-weather"></div>
-              <div class="daily-forecast-close">
-                <i class="fa-solid fa-xmark"></i>
-              </div>
-              <i class="fa-solid fa-chevron-right"></i>
-              <i class="fa-solid fa-chevron-left"></i>
-            </div>
+          <div class="app-weather">
+            <a href="weather.html"
+              ><i class="fa-solid fa-cloud-sun app-w-icon"></i
+            ></a>
+
+            <h3>Weather app</h3>
           </div>
         </section>
         <aside>
@@ -243,7 +225,6 @@
     </footer>
 
     <script src="calendar.js"></script>
-    <script src="weather.js"></script>
     <script src="profile.js"></script>
     <script src="clock.js"></script>
     <script src="main-script.js"></script>

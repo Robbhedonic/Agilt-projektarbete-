@@ -1,160 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/2b9cdc1c9a.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/2b9cdc1c9a.js" crossorigin="anonymous"></script>
 
     <!-- <link rel="stylesheet" href="daglig.css"> -->
     <link rel="stylesheet" href="style/style.css" />
 
     <title>Document</title>
-  </head>
+</head>
 
-  <body class="body-daily oo">
+<body class="body-daily oo">
     <!-- nav bar -->
 
     <header>
-      <nav class="nav-1">
-        <input type="checkbox" id="check" />
-        <label for="check" class="checkbtn">
+        <nav class="nav-1">
+            <input type="checkbox" id="check" />
+            <label for="check" class="checkbtn">
           <i class="fa-solid fa-bars"></i>
         </label>
-        <label class="logo">Equilibrium</label>
+            <label class="logo">Equilibrium</label>
 
-        <ul>
-          <li class="user-name"><a href=""></a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="todo.html">To do list</a></li>
-          <li><a href="user.html">Profile</a></li>
+            <ul>
+                <li class="user-name">
+                    <a href=""></a>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="todo.html">To do list</a></li>
+                <li><a href="user.html">Profile</a></li>
 
-          <li class="l-out"><a href="index.html">Log out</a></li>
-        </ul>
-      </nav>
+                <li class="l-out"><a href="index.html">Log out</a></li>
+            </ul>
+        </nav>
 
-      <nav class="location-in-website">
-        <div class="triangle-left"></div>
-        <div class="location-indice"><h4>Daily Routine</h4></div>
-        <div class="triangle-right"></div>
-      </nav>
+        <nav class="location-in-website">
+            <div class="triangle-left"></div>
+            <div class="location-indice">
+                <h4>Daily Routine</h4>
+            </div>
+            <div class="triangle-right"></div>
+        </nav>
     </header>
 
     <!-- end of nav bar -->
     <div class="write-acitvity-container">
-      <button class="write-acitvity">Write your acitvity</button>
-      <p class="warning-daily">Please sign in first</p>
+        <button class="write-acitvity">Write your acitvity</button>
+        <p class="warning-daily">Please sign in first</p>
     </div>
     <main class="main-daily">
-      <div class="wrapper">
-        <!-- filter menu -->
-        <div class="filter-menu">
-          <ul>
-            <li>
-              <i class="fa-solid fa-arrow-down-short-wide d-icons"></i>
-              <h3>Filter</h3>
-            </li>
-            <li>
-              <div class="title">
-                <h3>Priority</h3>
-                <i class="fa-solid fa-circle-chevron-up d-icons"></i>
-                <i class="fa-solid fa-circle-chevron-down d-icons"></i>
-              </div>
-              <div class="input-section">
-                <div>
-                  <input
-                    type="checkbox"
-                    id="all"
-                    value="all"
-                    class="radio"
-                    name="radio"
-                    data-text="a"
-                  />
-                  <label for="all">All</label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="hög"
-                    value="a-hög"
-                    class="radio"
-                    name="radio"
-                    data-text="a"
-                  />
-                  <label for="hög">High</label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="mellan"
-                    value="b-mellan"
-                    class="radio"
-                    name="radio"
-                    data-text="b"
-                  />
-                  <label for="mellan">Medium</label>
-                </div>
-                <div>
-                  <input
-                    type="checkbox"
-                    id="låg"
-                    value="c-låg"
-                    class="radio"
-                    name="radio"
-                    data-text="c"
-                  />
-                  <label for="låg">Low</label>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="title">
-                <!-- sortering -->
-                <i class="fa-solid fa-filter d-icons"></i>
-                <h3>Sorting</h3>
-              </div>
-            </li>
-            <li>
-              <div class="title">
-                <h3>Priority</h3>
-                <i class="fa-solid fa-circle-chevron-up d-icons"></i>
-                <i class="fa-solid fa-circle-chevron-down d-icons"></i>
-              </div>
-              <div class="input-section">
-                <div>
-                  <input
-                    type="radio"
-                    id="hög"
-                    value="a-hög"
-                    name="name-sort"
-                    data-text="a"
-                  />
-                  <label for="hög">High</label>
-                </div>
+        <div class="wrapper">
+            <!-- filter menu -->
+            <div class="filter-menu">
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-arrow-down-short-wide d-icons"></i>
+                        <h3>Filter</h3>
+                    </li>
+                    <li>
+                        <div class="title">
+                            <h3>Priority</h3>
+                            <i class="fa-solid fa-circle-chevron-up d-icons"></i>
+                            <i class="fa-solid fa-circle-chevron-down d-icons"></i>
+                        </div>
+                        <div class="input-section">
 
-                <div>
-                  <input
-                    type="radio"
-                    id="låg"
-                    value="c-låg"
-                    name="name-sort"
-                    data-text="c"
-                  />
-                  <label for="låg">Low</label>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="title">
-                <h3>Habit streak</h3>
-                <i class="fa-solid fa-circle-chevron-up d-icons"></i>
-                <i class="fa-solid fa-circle-chevron-down d-icons"></i>
-              </div>
-              <div class="input-section">
-                <span>
+                            <div>
+                                <input type="checkbox" id="hög" value="A-High" class="radio" name="radio" />
+                                <label for="hög">High</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="mellan" value="B-Medium" class="radio" name="radio" />
+                                <label for="mellan">Medium</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="låg" value="C-Low" class="radio" name="radio" />
+                                <label for="låg">Low</label>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title">
+                            <!-- sortering -->
+                            <i class="fa-solid fa-filter d-icons"></i>
+                            <h3>Sorting</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title">
+                            <h3>Priority</h3>
+                            <i class="fa-solid fa-circle-chevron-up d-icons"></i>
+                            <i class="fa-solid fa-circle-chevron-down d-icons"></i>
+                        </div>
+                        <div class="input-section">
+                            <div>
+                                <input type="radio" id="hög" value="A-High" name="name-sort" data-text="a" />
+                                <label for="hög">High</label>
+                            </div>
+
+                            <div>
+                                <input type="radio" id="låg" value="C-Low" name="name-sort" data-text="c" />
+                                <label for="låg">Low</label>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title">
+                            <h3>Habit streak</h3>
+                            <i class="fa-solid fa-circle-chevron-up d-icons"></i>
+                            <i class="fa-solid fa-circle-chevron-down d-icons"></i>
+                        </div>
+                        <div class="input-section">
+                            <span>
                   <input
                     type="radio"
                     id="stigande1"
@@ -163,7 +122,7 @@
                   />
                   <label for="stigande1">Rising</label>
                 </span>
-                <span>
+                            <span>
                   <input
                     type="radio"
                     id="fallande1"
@@ -172,86 +131,89 @@
                   />
                   <label for="fallande1">Falling</label>
                 </span>
-              </div>
-            </li>
-          </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <table class="table">
+                <tr>
+                    <th>Number of activity</th>
+                    <th>Name of activity:</th>
+                    <th>Priority of activity:</th>
+                    <th>How often do u do activity:</th>
+                    <th>Change of activity streak</th>
+                    <th>
+                        <h3>Action</h3>
+                    </th>
+                </tr>
+
+                <!-- <div class="acitvitylist"></div> -->
+                <tbody id="data"></tbody>
+            </table>
+
+            <!-- end of filter menu -->
+            <!-- counter -->
         </div>
-        <table class="table">
-          <tr>
-            <th>Number of activity</th>
-            <th>Name of activity:</th>
-            <th>Priority of activity:</th>
-            <th>How often do u do activity:</th>
-            <th>Change of activity streak</th>
-            <th>
-              <h3>Action</h3>
-            </th>
-          </tr>
-
-          <!-- <div class="acitvitylist"></div> -->
-          <tbody id="data"></tbody>
-        </table>
-
-        <!-- end of filter menu -->
-        <!-- counter -->
-      </div>
-      <div class="input-wrapper">
-        <div class="input-container">
-          <div class="close-btn"><i class="fa-solid fa-xmark d-icons"></i></div>
-          <div class="input-content">
-            <div>
-              <input type="text" id="title" placeholder="typ av aktivitet" />
-            </div>
-            <div>
-              <input
-                type="number"
-                id="number"
-                placeholder="Hur ofta dagar gör akitevitek per dag"
-              />
-            </div>
-            <div>
-              <div>
-                <h4>Prioritet</h4>
-                <select name="periority" id="Prioritet">
-                  <option value="a-hög">High</option>
-                  <option value="b-mellan">Medium</option>
-                  <option value="c-låg">Low</option>
+        <div class="input-wrapper">
+            <div class="input-container">
+                <div class="close-btn"><i class="fa-solid fa-xmark d-icons"></i></div>
+                <div class="input-content">
+                    <div>
+                        <input type="text" id="title" placeholder="typ av aktivitet" />
+                    </div>
+                    <div>
+                        <input type="number" id="number" placeholder="Hur ofta dagar gör akitevitek per dag" />
+                    </div>
+                    <div>
+                        <div>
+                            <h4>Prioritet</h4>
+                            <select name="periority" id="Prioritet">
+                  <option value="A-High" data-text="a-high">High</option>
+                  <option value="B-Medium" data-text="b-medium">Medium</option>
+                  <option value="C-Low" data-text="c-low">Low</option>
                 </select>
-              </div>
-            </div>
+                        </div>
+                    </div>
 
-            <div class="btn-activity">
-              <button class="add-activity">Add Activity</button>
+                    <div class="btn-activity">
+                        <button class="add-activity">Add Activity</button>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <!-- counter -->
+        <!-- counter -->
 
-      <!-- counter -->
-      <!--  -->
+        <!-- counter -->
+        <!--  -->
     </main>
     <footer>
-      <div>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About us</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
+        <div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
 
-      <div class="copyright-box">
-        <div><p>Equilibrium</p></div>
-        <div><p>Copyright</p></div>
-        <div><p>© 2024</p></div>
-      </div>
-      <div>
-        <h3>Equilibrium</h3>
-      </div>
+        <div class="copyright-box">
+            <div>
+                <p>Equilibrium</p>
+            </div>
+            <div>
+                <p>Copyright</p>
+            </div>
+            <div>
+                <p>© 2024</p>
+            </div>
+        </div>
+        <div>
+            <h3>Equilibrium</h3>
+        </div>
     </footer>
 
     <script src="daglig.js"></script>
     <script src="main-script.js"></script>
     <script src="users-sida.js"></script>
-  </body>
+</body>
+
 </html>

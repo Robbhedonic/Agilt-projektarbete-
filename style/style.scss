@@ -1,11 +1,10 @@
 @import "./variable";
 @import "./calendar";
-@import "./weather";
 @import "./pomodoro";
 @import "./about";
 @import "./profile";
 @import "./clock";
-@import "./weather";
+
 @import "./main-style";
 
 *{
@@ -474,4 +473,25 @@ iframe{
 
 .oo{
     background: black;
+}
+
+.app-weather{
+    background: rgb(98, 98, 101, 0.1);
+    box-shadow: 0px 0px 16px 0px rgb(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: $border-radius;
+    width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+        .app-w-icon{
+            color: $primary-text-color;
+            font-size: 80px;
+        }
+        h3{
+            margin-top: 10px;
+        }
 }

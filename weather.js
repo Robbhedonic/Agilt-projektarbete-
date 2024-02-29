@@ -51,7 +51,7 @@ let getWeatherDetails = (name, lat, lon) => {
             <p>${element.weather[0].main}</p>
             <div class="details">
                 <div class="col">
-                    <img src="/images/humidity.png" alt="">
+                    <img src="images/humidity.png" alt="">
 
                     <div class="humidity">
                         <p>${element.main.humidity} %</p>
@@ -60,7 +60,7 @@ let getWeatherDetails = (name, lat, lon) => {
                 </div>
 
                 <div class="col">
-                    <img src="/images/wind.png" alt="">
+                    <img src="images/wind.png" alt="">
                     <div class="humidity">
                         <p> ${element.wind.speed} Km/H</p>
                         <p>wind</p>
@@ -84,7 +84,7 @@ let getWeatherDetails = (name, lat, lon) => {
                                 <p>${element.weather[0].main}</p>
                                 <div class="details">
                                     <div class="col">
-                                        <img src="/images/humidity.png" alt="">
+                                        <img src="images/humidity.png" alt="">
 
                                         <div class="humidity">
                                             <p>${element.main.humidity} %</p>
@@ -95,7 +95,7 @@ let getWeatherDetails = (name, lat, lon) => {
 
 
                                     <div class="col">
-                                        <img src="/images/wind.png" alt="">
+                                        <img src="images/wind.png" alt="">
                                         <div class="humidity">
                                             <p> ${element.wind.speed} Km/H</p>
                                             <p>wind</p>
@@ -147,7 +147,7 @@ let getWeatherDetails = (name, lat, lon) => {
 btn.addEventListener("click", async() => {
     link.style.display = "block"
     if (cityName.value === "") {
-        alert("please enter the name of city")
+        alert("Please enter the name of city")
     }
     let city = document.querySelector(".input")
     let params = new URLSearchParams();
@@ -167,18 +167,7 @@ btn.addEventListener("click", async() => {
 
 // function to show div
 let showDiv = (e) => {
-    // if (!link.classList.contains("hide")) {
-    //     link.classList.add("hide")
-    //         // DailyweatherDiv.classList.add("show")
-    //     forecastContainer.classList.add("show")
 
-    //     link.innerHTML = "to see more forecast click here"
-
-    // } else {
-    //     link.classList.remove("hide")
-    //         // DailyweatherDiv.classList.remove("show")
-    //     forecastContainer.classList.remove("show")
-    // }
     forecastContainer.classList.add("show")
     let forecastDivs = document.querySelectorAll(".section")
     showforecastDivs(forecastDivs)
