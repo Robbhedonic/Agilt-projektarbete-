@@ -584,20 +584,54 @@
     }
     
     input[type="submit"] {
-        width: 50%;
-        height: 13%;
+        width: 100px;
+        height: 40px;
         border-radius: $border-radius;
         border-radius: 1px solid $border-line-color-a ;
         color: $primary-text-color;
         background: transparent;
+        margin-left: 10px;
+        
   
       
+    }
+    .sign-up-re-direction{
+        width: 100px;
+        height: 40px;
+        border-radius: $border-radius;
+        border-radius: 1px solid $border-line-color-a ;
+        color: $primary-text-color;
+        background: transparent;
+        a{
+            color: $primary-text-color;
+        }
+       &:hover{
+        background: $button-hover-color;
+        
+       } 
     }
     
     input[type="submit"]:hover {
         background: $button-hover-color;
     }
+    .forget-password{
+        font-size: 12px;
+        a{
+            color: $primary-text-color;
+            &:hover{
+                color: blue;
+            }
+
+        }
+        
+    }
     /* end of sign in and sign up form */
+    .button-in-login{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 300px;
+    }
     
     .main-homepage .welcome-text {
         opacity: 0;

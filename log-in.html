@@ -34,7 +34,9 @@
 
       <nav class="location-in-website">
         <div class="triangle-left"></div>
-        <div class="location-indice"><h4>Login</h4></div>
+        <div class="location-indice">
+          <h4>Login</h4>
+        </div>
         <div class="triangle-right"></div>
       </nav>
     </header>
@@ -49,7 +51,7 @@
             <p></p>
           </div>
           <div class="section">
-            <input type="email" id="email-login" placeholder="email" required />
+            <input type="email" id="email-login" placeholder="email" />
 
             <p></p>
           </div>
@@ -58,7 +60,17 @@
 
             <p></p>
           </div>
-          <input type="submit" value="Log in" id="login-btn" />
+          <div class="button-in-login">
+            <input type="submit" value="Log in" id="login-btn" />
+            <button class="sign-up-re-direction">
+              <a href="sign-up.html">Sign up</a>
+            </button>
+          </div>
+          <div>
+            <label for="text" class="forget-password"
+              ><a href="">Do you forget your password?</a></label
+            >
+          </div>
         </div>
       </form>
     </main>
@@ -74,9 +86,15 @@
       </div>
 
       <div class="copyright-box">
-        <div><p>Equilibrium</p></div>
-        <div><p>Copyright</p></div>
-        <div><p>© 2024</p></div>
+        <div>
+          <p>Equilibrium</p>
+        </div>
+        <div>
+          <p>Copyright</p>
+        </div>
+        <div>
+          <p>© 2024</p>
+        </div>
       </div>
       <div>
         <h3>Equilibrium</h3>
@@ -85,7 +103,6 @@
 
     <script src="log-in.js"></script>
     <!-- <script src="script.js"></script> -->
-    <script src="main-script.js"></script>
     <script src="users-sida.js"></script>
   </body>
 </html>

@@ -8,22 +8,21 @@ let createbtn = document.querySelector(".create-task")
 let warningText = document.querySelector(".warning-task")
     // show and hide filter menu
 icons.forEach((icon) => {
-    icon.addEventListener(("click"), (e) => {
-        e.target.parentElement.nextElementSibling.classList.toggle("show")
-        if (e.target.classList.contains("fa-circle-chevron-down")) {
-            e.target.previousElementSibling.style.display = "block"
-            e.target.style.display = "none"
+        icon.addEventListener(("click"), (e) => {
+            e.target.parentElement.nextElementSibling.classList.toggle("show")
+            if (e.target.classList.contains("fa-circle-chevron-down")) {
+                e.target.previousElementSibling.style.display = "block"
+                e.target.style.display = "none"
 
-        } else {
-            e.target.nextElementSibling.style.display = "block";
-            e.target.style.display = "none"
-        }
+            } else {
+                e.target.nextElementSibling.style.display = "block";
+                e.target.style.display = "none"
+            }
+        })
     })
-})
-console.log(localStorage.usernameinfo)
     // showTaskInput
 let showTaskInput = () => {
-    if (localStorage.usernameinfo) {
+    if (localStorage.username) {
         rightContentDiv.classList.add("active")
         warningText.classList.remove("show")
 
@@ -529,3 +528,19 @@ function readInfo(title, description, deadline, Tidestimat, status, kategori) {
         document.querySelector("#kategori2").value = kategori
 
 }
+
+
+// function light word function
+let lightWordDiv = document.querySelector(".light-word");
+let word = "ToDoList";
+let arr = Array.from(word);
+console.log(arr)
+arr.forEach((ele) => {
+    console.log(ele)
+    let newDiv = document.createElement("div");
+    newDiv.className = "word-div"
+    let p = document.createElement("p")
+    p.innerHTML = ele
+    newDiv.append(p)
+    lightWordDiv.append(newDiv)
+})

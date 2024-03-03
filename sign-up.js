@@ -6,13 +6,31 @@ let emailSignup = document.querySelector("#email-signup")
 let passwordSignup = document.querySelector("#password-signup")
 let repasswordSignup = document.querySelector("#repassword-signup")
 let btnSignup = document.querySelector("#signup-btn");
-let setLocalStorageInfo = (e) => {
-    e.preventDefault()
+let users = JSON.parse(localStorage.getItem("user")) || []
 
+// push information to localstoage function
+let setLocalStorageInfo = (e) => {
+
+    // value  input value
     let usernameValue = usernameSignup.value
     let emailValue = emailSignup.value
     let passwordValue = passwordSignup.value
     let repasswordValue = repasswordSignup.value
+
+    e.preventDefault()
+        // create  object and push it in array
+    let newUser = {
+        username: usernameSignup.value,
+        email: emailSignup.value,
+        password: passwordSignup.value,
+        isLogin: false,
+        id: Date.now()
+    }
+
+
+    // validation of input field
+
+
     if (usernameValue === "" || emailValue === "" || passwordValue === "" || repasswordValue === "" || repasswordValue === "" || repasswordValue != passwordValue) {
         if (usernameValue === "") {
             usernameSignup.nextElementSibling.innerHTML = "please fill field"
@@ -57,14 +75,37 @@ let setLocalStorageInfo = (e) => {
 
 
     } else {
-        localStorage.usernameinfo = usernameSignup.value;
-        localStorage.emailinfo = emailSignup.value;
-        localStorage.passwordinfo = passwordSignup.value
-        setTimeout(() => {
-            window.location = "log-in.html"
-        }, 2000)
-    }
 
+        // push object in localstorage
+        // users.push(newUser);
+
+        // localStorage.setItem("user", JSON.stringify(users))
+        // here check if the username and e mail is already exist
+
+
+        let exist = users.length &&
+            JSON.parse(localStorage.getItem('user')).some(data =>
+                data.username.toLowerCase() == usernameValue.toLowerCase() &&
+                data.email.toLowerCase() == emailValue.toLowerCase()
+            );
+        // alert u already signup 
+        if (exist) {
+
+            alert("Ooopppssss... Duplicate found!!!\nYou have already sigjned up");
+        } else {
+            // else push new array
+
+            users.push(newUser);
+            localStorage.setItem('user', JSON.stringify(users));
+            setTimeout(() => {
+                window.location = "log-in.html"
+            }, 2000)
+        }
+
+
+        // go to login page when u sucess
+
+    }
 }
 
 btnSignup.addEventListener("click", setLocalStorageInfo)

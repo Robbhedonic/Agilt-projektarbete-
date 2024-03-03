@@ -1,3 +1,6 @@
+/*
+
+
 // login and name 
 let loginDiv = document.querySelector(".log-in")
 let logoutDiv = document.querySelector(".log-out")
@@ -31,3 +34,21 @@ let eraselocalstorage = () => {
 
 
 logoutBtn.addEventListener("click", eraselocalstorage)
+*/
+users = JSON.parse(localStorage.getItem("user")) || []
+
+let logoutDiv = document.querySelector(".log-out-div")
+let welcomeText = document.querySelector(".welcome-text")
+let userName = document.querySelector(".user-name")
+let logoutBtn = document.querySelector(".logOutBtn")
+let NameofUser = localStorage.username
+
+if (NameofUser) {
+    userName.innerHTML = NameofUser;
+
+}
+
+logoutBtn.addEventListener("click", () => {
+        localStorage.removeItem("username")
+    })
+    //welcomeText.innerHTML = NameofUser
