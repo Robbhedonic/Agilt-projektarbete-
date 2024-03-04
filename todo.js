@@ -1,4 +1,10 @@
-let rightContentDiv = document.querySelector(".right-content.add-task")
+function adddata(){
+
+
+
+
+
+    let rightContentDiv = document.querySelector(".right-content.add-task")
 let icons = document.querySelectorAll(".filter-menu ul i.fa-solid")
 let upToDateDiv = document.querySelector(".right-content.uptodate")
 let closeTaskDive = document.querySelector(".right-content .top-content .close-div")
@@ -544,3 +550,17 @@ arr.forEach((ele) => {
     newDiv.append(p)
     lightWordDiv.append(newDiv)
 })
+    
+
+
+
+
+
+
+
+
+}
+
+
+
+

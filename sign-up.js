@@ -25,6 +25,7 @@ let setLocalStorageInfo = (e) => {
         password: passwordSignup.value,
         isLogin: false,
         id: Date.now()
+        
     }
 
 
