@@ -25,7 +25,7 @@ let warningDailyText = document.querySelector(".warning-daily")
 //     inputWrapper.classList.add("show")
 // }
 let showActivityDiv = () => {
-    if (localStorage.usernameinfo) {
+    if (localStorage.username) {
         inputWrapper.classList.add("show")
         warningDailyText.classList.remove("show")
 
