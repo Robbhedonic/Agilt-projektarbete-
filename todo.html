@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/2b9cdc1c9a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style/style.css" />
+    <title>Document</title>
+</head>
+
+<body class="oo">
+    <header>
+        <nav class="nav-1">
+            <input type="checkbox" id="check" />
+            <label for="check" class="checkbtn">
+          <i class="fa-solid fa-bars"></i>
+        </label>
+            <label class="logo">Equilibrium</label>
+            <!-- log out  div-->
+            </ul>
+            <ul class="log-out-div">
+                <li class="user-name">
+                    <a href=""></a>
+                </li>
+                <li><a href="index.html" class="logOutBtn">Log Out</a></li>
+            </ul>
+
+            <ul class="login">
+
+                <li><a href="daglig.html">Daily Routine</a></li>
+                <li><a href="user.html">Profile</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <!-- <li><a href="index.html">Log out</a></li> -->
+
+        </nav>
+
+        <nav class="location-in-website">
+            <div class="triangle-left"></div>
+            <div class="location-indice">
+                <h4>To Do List</h4>
+            </div>
+            <div class="triangle-right"></div>
+        </nav>
+    </header>
+
+    <main class="main-todo">
+        <div class="light-word"></div>
+
+        <div class="creat-task-container">
+            <button class="create-task">Create Task</button>
+        </div>
+        <p class="warning-task">Please sign in first</p>
+
+        <div class="todo-container">
+            <!-- filter menu -->
+            <div class="filter-menu">
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-arrow-down-short-wide d-icons"></i>
+                        <h3>Filter</h3>
+                    </li>
+                    <li>
+                        <div class="title">
+                            <h3>Status</h3>
+                            <i class="fa-solid fa-circle-chevron-up d-icons"></i>
+                            <i class="fa-solid fa-circle-chevron-down d-icons"></i>
+                        </div>
+                        <div class="input-section">
+
+                            <div>
+                                <input type="checkbox" id="completed" value="completed" class="checkbox" />
+                                <label for="completed">Completed</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="uncompleted" value="uncompleted" class="checkbox" />
+                                <label for="uncompleted">Uncompleted</label>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title">
+                            <h3>Category</h3>
+                            <i class="fa-solid fa-circle-chevron-up d-icons"></i>
+                            <i class="fa-solid fa-circle-chevron-down d-icons"></i>
+                        </div>
+                        <div class="input-section">
+
+                            <div>
+                                <input type="checkbox" id="hälsa" value="hälsa" class="checkbox1" />
+                                <label for="name">Health</label>
+                            </div>
+                            <span>
+                  <input
+                    type="checkbox"
+                    id="hushåll"
+                    value="hushåll"
+                    class="checkbox1"
+                  />
+                  <label for="hushåll">Household</label></span
+                >
+                <span>
+                  <input
+                    type="checkbox"
+                    id="jobbrelaterat"
+                    value="jobbrelaterat"
+                    class="checkbox1"
+                  />
+                  <label for="jobbrelaterat">Related to Work</label></span
+                >
+                <span>
+                  <input
+                    type="checkbox"
+                    id="nöja"
+                    value="nöja"
+                    class="checkbox1"
+                  />
+                  <label for="nöja">Satisfy</label></span
+                >
+              </div>
+            </li>
+
+            <li>
+              <div class="title">
+                <!-- sortering -->
+                <i class="fa-solid fa-filter d-icons"></i>
+                <h3>Sortering</h3>
+              </div>
+            </li>
+            <li>
+              <div class="title">
+                <h3>Deadline</h3>
+                <i class="fa-solid fa-circle-chevron-up d-icons"></i>
+                <i class="fa-solid fa-circle-chevron-down d-icons"></i>
+              </div>
+              <div class="input-section">
+                <span>
+                  <input
+                    type="radio"
+                    id="stigande "
+                    value="stigande"
+                    name="radio"
+                    class="deadline"
+                  />
+                  <label for=" ">Rising</label>
+                </span>
+                            <span>
+                  <input
+                    type="radio"
+                    id="fallande"
+                    value="fallande"
+                    name="radio"
+                    class="deadline"
+                  />
+                  <label for="fallande">Falling</label>
+                </span>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="title">
+                            <h3>Estimated Time</h3>
+                            <i class="fa-solid fa-circle-chevron-up d-icons"></i>
+                            <i class="fa-solid fa-circle-chevron-down d-icons"></i>
+                        </div>
+                        <div class="input-section">
+                            <span>
+                  <input
+                    type="radio"
+                    id="stigande1"
+                    value="stig"
+                    name="radio"
+                    class="tidestimat"
+                  />
+                  <label for="stigande1">Rising</label>
+                </span>
+                            <span>
+                  <input
+                    type="radio"
+                    id="fallande1"
+                    value="fall"
+                    name="radio"
+                    class="tidestimat"
+                  />
+                  <label for="fallande1">Falling</label>
+                </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- end of filter menu -->
+            <!-- tabel -->
+            <table class="table">
+                <tr>
+                    <th>Nummber</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Deadline</th>
+                    <th>Time Estimate</th>
+                    <th>Status</th>
+                    <th>Category</th>
+                    <th>
+                        <h3>Action</h3>
+                    </th>
+                </tr>
+                <tbody id="data"></tbody>
+            </table>
+        </div>
+
+        <!-- input container for add task -->
+
+        <div class="right-content add-task">
+            <div class="top-content">
+                <div class="close-div">
+                    <i class="fa-solid fa-xmark d-icons"></i>
+                </div>
+                <div class="input-container">
+                    <span>
+              <label for="title">Title</label>
+              <input type="text" id="title" />
+            </span>
+                    <span>
+              <label for="description">Description</label>
+              <input type="text" id="description" />
+            </span>
+                    <span>
+              <label for="deadline">Deadline</label>
+              <input type="date" id="deadline" />
+            </span>
+                    <span>
+              <label for="tidestimat">Time Estimate</label>
+              <input type="time" id="tidestimat" />
+            </span>
+                    <div class="status">
+                        <label for="status">Status</label>
+                        <select name="status" id="status">
+                <option value="completed">Completed</option>
+                <option value="uncompleted">Uncompleted</option>
+              </select>
+                    </div>
+                    <div class="categori">
+                        <label for="kategori">Category</label>
+                        <select name="kategori" id="kategori" class="input">
+                Category
+                <option value="hälsa">Health</option>
+                <option value="hushåll">Household</option>
+                <option value="jobbrelaterat">Related to Work</option>
+                <option value="nöja">Satisfy</option>
+              </select>
+                    </div>
+                </div>
+                <!-- <input type="text" hidden class="id"> -->
+                <div class="btns">
+                    <button class="btn">Add</button>
+                </div>
+            </div>
+        </div>
+        <!-- input container for uptodate task -->
+
+        <div class="right-content uptodate"></div>
+        <!-- input container for read -->
+
+        <div class="right-content read">
+            <div class="top-content">
+                <div class="close-div2" onclick="closeFunction()">
+                    <i class="fa-solid fa-xmark d-icons"></i>
+                </div>
+                <div class="input-container">
+                    <span>
+              <label for="title">Title</label>
+              <input type="text" id="title2" />
+            </span>
+                    <span>
+              <label for="description">Description</label>
+              <input type="text" id="description2" />
+            </span>
+                    <span>
+              <label for="deadline">Deadline</label>
+              <input type="date" id="deadline2" />
+            </span>
+                    <span>
+              <label for="tidestimat">Estimated Time</label>
+              <input type="time" id="tidestimat2" />
+            </span>
+                    <div class="status">
+                        <label for="status">Status</label>
+                        <select name="status" id="status2">
+                <option value="completed">Completed</option>
+                <option value="uncompleted">Uncompleted</option>
+              </select>
+                    </div>
+                    <div class="categori">
+                        <label for="kategori">Category</label>
+                        <select name="kategori" id="kategori2" class="input">
+                Category
+                <option value="hälsa">Health</option>
+                <option value="hushåll">Household</option>
+                <option value="jobbrelaterat">Related to Work</option>
+                <option value="nöja">Satisfy</option>
+              </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="user.html">Profile</a></li>
+                <li><a href="todo.html">To Do List</a></li>
+            </ul>
+        </div>
+
+        <div class="copyright-box">
+            <div>
+                <p>Equilibrium</p>
+            </div>
+            <div>
+                <p>Copyright</p>
+            </div>
+            <div>
+                <p>© 2024</p>
+            </div>
+        </div>
+        <div>
+            <h3>Equilibrium</h3>
+        </div>
+    </footer>
+
+    <script src="todo.js"></script>
+    <script src="main-script.js"></script>
+    <script src="users-sida.js"></script>
+</body>
+
+</html>
