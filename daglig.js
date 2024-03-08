@@ -49,7 +49,9 @@ let acitivityBtn = document.querySelector(".add-activity")
 let acitvityDiv = document.querySelector(".acitvitylist")
 let sorteringByCheckbox = document.querySelectorAll("[name=checkbox]")
 let DataList = document.querySelector("#data")
-let activities = [];
+    // create two localstorage one according to filter username and onther one for all users
+let activities = JSON.parse(localStorage.getItem("activity")) || [];
+let localStorageCopy = JSON.parse(localStorage.getItem("activity")) || [];
 
 acitivityBtn.addEventListener("click", createDiv)
     /// create table function
@@ -75,7 +77,7 @@ function createTable() {
         <th>
             <p>action</p>
 
-            <button id="delete" onclick="deletetask(${index},this)"><i class="fa-solid fa-trash-can d-icons"></i></button>
+            <button id="delete" onclick="deletetask(${index},this,${el.id})"><i class="fa-solid fa-trash-can d-icons"></i></button>
 
         </th>
     </tr>
@@ -90,22 +92,16 @@ function createTable() {
     })
 
 }
-getdata()
+setdata()
 createTable()
 
-// local storage funtion to get data
-function getdata() {
-    let details = localStorage.getItem("activity")
-    if (details) {
-        activities = JSON.parse(details)
-    } else {
-        setdata()
-    }
-}
-// local storage funtion to set data
-
+// filter data according to name of user
 function setdata() {
-    localStorage.setItem("activity", JSON.stringify(activities))
+
+    let filtered = localStorageCopy.filter((el) => {
+        return el.username === localStorage.username
+    })
+    activities = filtered;
 }
 //  create object function and push it in new array
 function createDiv() {
@@ -117,22 +113,36 @@ function createDiv() {
         number: numberInput.value,
         pieriorty: selectPrioritet.value,
         quantity: 0,
+        username: localStorage.username
     }
-    activities.push(details)
+    localStorageCopy.push(details)
+
+    localStorage.setItem("activity", JSON.stringify(localStorageCopy));
     setdata()
     createTable()
     titleInput.value = ""
     numberInput.value = ""
 }
 // delete each tr according to index 
-function deletetask(index) {
+function deletetask(index, e, id) {
     DataList.innerHTML = ""
-    if (confirm("Are u sure that u want to delete?") === true) {
-        activities.splice(index, 1)
+
+    let choosenitem = localStorageCopy.findIndex((ele) => {
+        return ele.id === id
+    })
+    filteritem = localStorageCopy.filter((el, ind) => {
+        return ind !== choosenitem
+    })
+
+    if (confirm("do u want to delet?") === true) {
+
+        e.parentElement.remove()
+        localStorageCopy = [...filteritem]
+        localStorage.setItem("activity", JSON.stringify(localStorageCopy))
     }
+
     setdata()
     createTable()
-        //console.log(activities[index])
 }
 
 
@@ -160,7 +170,7 @@ function creatNewDivData(title, number, pieriorty, index) {
             </th> 
             <th>
                 <p>action</p>
-                <button id="delete" onclick="deletetask(${index},this)"><i class="fa-solid fa-trash-can d-icons"></i></button>
+                <button id="delete" onclick="deletetask(${index},this,${el.id})"><i class="fa-solid fa-trash-can d-icons"></i></button>
 
             </th>
         </tr>
@@ -179,11 +189,12 @@ function changeQuantity(index, quantity, e) {
 
         activities[index].quantity = quantity;
         activities[index].number = quantity
-            //console.log(quantity)
-            //console.log(activities[index].number)
+
     }
-    createTable()
+    localStorage.setItem("activity", JSON.stringify(localStorageCopy))
+
     setdata()
+    createTable()
 
 }
 
@@ -387,3 +398,21 @@ function sorteringByName() {
 
 }
 sorteringByName()
+
+
+
+
+// function light word function
+let lightWordDiv = document.querySelector(".light-word-daily");
+let word = "DailyRutin";
+let arr = Array.from(word);
+//console.log(arr)
+arr.forEach((ele) => {
+    //console.log(ele)
+    let newDiv = document.createElement("div");
+    newDiv.className = "word-div"
+    let p = document.createElement("p")
+    p.innerHTML = ele
+    newDiv.append(p)
+    lightWordDiv.append(newDiv)
+})

@@ -24,14 +24,14 @@ let getinfofromlocalstorage = (e) => {
         if (usernameValue === "") {
             usernameSignin.nextElementSibling.innerHTML = "please fill field"
             usernameSignin.nextElementSibling.style.display = "block"
-            usernameSignin.nextElementSibling.style.color = "red"
+            usernameSignin.nextElementSibling.style.color = "yellow"
         } else {
             usernameSignin.nextElementSibling.style.display = "none"
         }
         if (emailSignin.value === "") {
             emailSignin.nextElementSibling.innerHTML = "please fill field"
             emailSignin.nextElementSibling.style.display = "block"
-            emailSignin.nextElementSibling.style.color = "red"
+            emailSignin.nextElementSibling.style.color = "yellow"
         } else {
             emailSignin.nextElementSibling.style.display = "none"
         }
@@ -39,7 +39,7 @@ let getinfofromlocalstorage = (e) => {
         if (passwordValue === "") {
             passwordSignin.nextElementSibling.innerHTML = "please fill field"
             passwordSignin.nextElementSibling.style.display = "block"
-            passwordSignin.nextElementSibling.style.color = "red"
+            passwordSignin.nextElementSibling.style.color = "yellow"
         } else {
             passwordSignin.nextElementSibling.style.display = "none"
         }
@@ -73,3 +73,27 @@ let getinfofromlocalstorage = (e) => {
 
 
 btnSignin.addEventListener("click", getinfofromlocalstorage)
+
+
+// show and hide password
+
+let readeyes = document.querySelector(".section:nth-child(3) .fa-solid.fa-eye");
+let hiddeneyes = document.querySelector(".section:nth-child(3) .fa-solid.fa-eye-slash");
+let sec = document.querySelector(".section:nth-child(3)")
+    //console.log(sec)
+hiddeneyes.addEventListener("click", hidepass)
+readeyes.addEventListener("click", showpass)
+
+function showpass() {
+    passwordSignin.type = "text"
+    hiddeneyes.classList.add("show")
+    readeyes.classList.add("hide")
+
+}
+
+function hidepass() {
+    passwordSignin.type = "password"
+    hiddeneyes.classList.remove("show")
+    readeyes.classList.remove("hide")
+}
+// end of section
