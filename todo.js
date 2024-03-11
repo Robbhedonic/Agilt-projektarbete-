@@ -104,7 +104,7 @@ function table() {
         </th>           
     </tr>
         `
-        //  Up is infomration the edit
+            //  Up is infomration the edit
         dataList.innerHTML += createElement
             //console.log(details[index].completed)
             // add color for task which is done
@@ -127,9 +127,9 @@ table()
 // function localstorage for filter username
 function getdata() {
     let filtered = localStorageCopy.filter((el) => {
-        return el.username === localStorage.username
-    })
-    //brandon equal both local storage
+            return el.username === localStorage.username
+        })
+        //brandon equal both local storage
     details = filtered;
     //console.log(filtered)
 }
@@ -257,7 +257,7 @@ function editfun(index, e, id) {
     let inputTidestimatUptodate = document.querySelector("#tidestimat1")
     let inputStatusUptodate = document.querySelector("#status1")
     let inputkategoriUptodate = document.querySelector("#kategori1")
-    
+
 
     // box information popup
     inputTitleUptodate.value = details[index].title
@@ -266,23 +266,23 @@ function editfun(index, e, id) {
     inputTidestimatUptodate.value = details[index].Tidestimat
     inputStatusUptodate.value = details[index].status
     inputkategoriUptodate.value = details[index].kategori
-   
+
 
 }
 // onclick uptodate and find selected div with index
 
 function uptodate(index, id) {
 
-    dataList.innerHTML = ""
+    //dataList.innerHTML = ""
 
-                // for every box that is not connec to with another function we need to created a new variable to the same things
+    // for every box that is not connec to with another function we need to created a new variable to the same things
     let inputTitleUptodate = document.querySelector("#title1")
     let inputDescriptionUptodate = document.querySelector("#description1")
     let inputDeadlineUptodate = document.querySelector("#deadline1")
     let inputTidestimatUptodate = document.querySelector("#tidestimat1")
     let inputStatusUptodate = document.querySelector("#status1")
     let inputkategoriUptodate = document.querySelector("#kategori1")
-            // boxes after after created TO DO list
+        // boxes after after created TO DO list
     details[index] = {
         title: inputTitleUptodate.value,
         description: inputDescriptionUptodate.value,
@@ -295,9 +295,11 @@ function uptodate(index, id) {
 
     }
 
+
     localStorage.setItem("task", JSON.stringify(details))
-   
     table()
+
+
 
 }
 
@@ -328,14 +330,14 @@ function createNewDiv(item, index) {
         // add color for task which is done
     let textDone = document.querySelectorAll(".text-done")
     textDone.forEach((el) => {
-            if (el.innerHTML === "completed") {
-                el.classList.add("done")
-                el.style.color = "green"
-            }
-        })
-        
+        if (el.innerHTML === "completed") {
+            el.classList.add("done")
+            el.style.color = "green"
+        }
+    })
 
-        //localStorage.setItem("task", JSON.stringify(details))
+
+    //localStorage.setItem("task", JSON.stringify(details))
 }
 
 

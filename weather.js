@@ -6,7 +6,12 @@ let cityName = document.querySelector(".input")
 let rigthBtn = document.querySelector("i.fa-solid.fa-chevron-right")
 let leftBtn = document.querySelector("i.fa-solid.fa-chevron-left")
 let forecastContainer = document.querySelector(".forecast-container")
-let apiKey = "a65f810e44dad1363e88691577fbcabf"
+let apiKey = "a65f810e44dad1363e88691577fbcabf";
+let weekday = ["Sunday", "Monday", "Tuesday", "Wedesday", "Thursday",
+    "Freday", "Saturday"
+]
+
+
 let getdata = async(apilink) => {
         let data = await fetch(apilink)
         let json = await data.json()
@@ -36,6 +41,10 @@ let getWeatherDetails = (name, lat, lon) => {
 
 
                     filterDays.forEach((element, index) => {
+                        // NAMR OF DAY
+                        let d = new Date(element.dt_txt)
+                        let dayname = weekday[d.getDay()]
+
                         //console.log(element.weather[0].icon)
                         let temp = String(Math.round(element.main.temp - 273.15));
 
@@ -44,7 +53,9 @@ let getWeatherDetails = (name, lat, lon) => {
                             newCurrentdiv.className = "main-section"
                             newCurrentdiv.innerHTML =
                                 `
-                        <h2>${name}</h2>   
+                        <h2>${name}</h2>  
+                        <h2>${dayname} </h2>
+ 
     <h3> Date: ${element.dt_txt.split(" ")[0]}</h3>
             <img src="" alt="" class="weather-icon">
             <h1 class="temp">${temp}°C</h1>
@@ -77,7 +88,8 @@ let getWeatherDetails = (name, lat, lon) => {
                             let newDailydiv = document.createElement("div");
                             newDailydiv.className = "section"
                             newDailydiv.innerHTML = `
-                    
+                            <h2 class="day">${dayname}</h2> 
+
                         <h3> Date: ${element.dt_txt.split(" ")[0]}</h3>
                                 <img src="https://openweathermap.org/img/wn/${element.weather[0].icon}@2x.png" alt="" class="weather-icon">
                                 <h1 class="temp">${temp}°C</h1>
@@ -202,6 +214,7 @@ function showforecastDivs(forecastDivs) {
         if (currentIndex === 0) {
             e.target.classList.add("stop")
             rigthBtn.classList.remove("stop")
+
         } else {
             currentIndex--
 
@@ -222,4 +235,5 @@ function showforecastDivs(forecastDivs) {
 let dailyForecastClose = document.querySelector(".daily-forecast-close");
 dailyForecastClose.addEventListener("click", () => {
     forecastContainer.classList.remove("show")
+    window.location.reload();
 })
