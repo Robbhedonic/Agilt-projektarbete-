@@ -205,6 +205,8 @@ function showforecastDivs(forecastDivs) {
             leftBtn.classList.remove("stop")
         } else {
             currentIndex++
+            leftBtn.classList.remove("stop")
+
             addclass()
         }
 
@@ -217,6 +219,7 @@ function showforecastDivs(forecastDivs) {
 
         } else {
             currentIndex--
+            rigthBtn.classList.remove("stop")
 
             addclass()
         }
