@@ -1,0 +1,107 @@
+.light-word {
+    display: flex;
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.light-word .word-div {
+    width: calc(100%/8);
+    margin: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+    height: 40px;
+    animation: glowdiv 4s linear infinite;
+    -webkit-animation: glowdiv 4s linear infinite;
+}
+
+.light-word .word-div p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: 1.5s;
+    -webkit-transition: 1.5s;
+    -moz-transition: 1.5s;
+    -ms-transition: 1.5s;
+    -o-transition: 1.5s;
+}
+.light-word .word-div:nth-child(1) p {
+    color: green;
+    text-shadow: 0 0 15px green, 0 0 25px green;
+    animation: glow 4s linear infinite;
+    -webkit-animation: glow 4s linear infinite;
+}
+
+.light-word .word-div:nth-child(2) p {
+    color: yellow;
+    text-shadow: 0 0 15px yellow, 0 0 25px yellow;
+    animation: glow 4s linear infinite;
+    -webkit-animation: glow 4s linear infinite;
+    animation-delay: 0.5s;
+}
+
+.light-word .word-div:nth-child(3) p {
+    color: blue;
+    text-shadow: 0 0 15px blue, 0 0 25px blue;
+    animation: glow 4s linear infinite;
+    -webkit-animation: glow 4s linear infinite;
+    animation-delay: 1s;
+}
+
+.light-word .word-div:nth-child(4) p {
+    color: red;
+    text-shadow: 0 0 15px red, 0 0 25px red;
+    animation: glow 4s linear infinite;
+    -webkit-animation: glow 4s linear infinite;
+    animation-delay: 1.5s;
+}
+
+.light-word .word-div:nth-child(5) p {
+    color: orange;
+    text-shadow: 0 0 15px orange, 0 0 25px orange;
+    animation: glow 4s linear infinite;
+    -webkit-animation: glow 4s linear infinite;
+    animation-delay: 2s;
+}
+
+.light-word .word-div:nth-child(6) p {
+    color: blue;
+    text-shadow: 0 0 15px blue, 0 0 25px blue;
+    animation: glow 4s linear infinite;
+    -webkit-animation: glow 4s linear infinite;
+    animation-delay: 2.5s;
+}
+
+.light-word .word-div:nth-child(7) p {
+    color: red;
+    text-shadow: 0 0 15px red, 0 0 25px red;
+    animation: glow 4s linear infinite;
+    -webkit-animation: glow 4s linear infinite;
+    animation-delay: 3s;
+}
+
+.light-word .word-div:nth-child(8) p {
+    color: green;
+    text-shadow: 0 0 15px green, 0 0 25px green;
+    animation: glow 4s linear infinite;
+    -webkit-animation: glow 4s linear infinite;
+    animation-delay: 3.5s;
+}
+
+
+
+@keyframes glow {
+    0% {
+        filter: hue-rotate(0deg);
+        -webkit-filter: hue-rotate(0deg);
+        opacity: 0;
+    }
+    100% {
+        filter: hue-rotate(360deg);
+        -webkit-filter: hue-rotate(360deg);
+        opacity: 1;
+    }
+}

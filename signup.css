@@ -1,0 +1,54 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body.oo {
+    background-image: url(/images/sign-up-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.pass-div {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    position: relative;
+}
+
+.pass-div i {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+}
+
+.pass-div i.fa-eye-slash {
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    -ms-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+}
+
+.pass-div i.fa-eye-slash.show {
+    opacity: 1;
+}
+
+.pass-div i.fa-eye {
+    transition: opacity 0.3s ease-in-out;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    -ms-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+    z-index: 1;
+}
+
+.pass-div i.fa-eye.hide {
+    opacity: 1;
+    z-index: -1;
+}
