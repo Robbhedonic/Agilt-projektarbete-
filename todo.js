@@ -65,8 +65,13 @@ let tidestimatvalue = inputTidestimat.value;
 let statusvalue = inputStatus.value;
 let kategorivalue = inputkategori.value;
 // create two local storage one for filtered user and another one for all users 
+
+
+// user filter
 let details = JSON.parse(localStorage.getItem("task")) || [];
+// all users
 let localStorageCopy = JSON.parse(localStorage.getItem("task")) || [];
+// joseph created it
 let newedit = JSON.parse(localStorage.getItem("task")) || [];
 
 
@@ -96,9 +101,10 @@ function table() {
             <button id="edit" onclick="editfun(${index},this,${el.id})"><i class="fa-solid fa-pen-to-square d-icons"></i></button>
             <button id="delete" onclick="deletetask(${index},this,${el.id})"><i class="fa-solid fa-trash-can d-icons"></i></button>
 
-        </th>
+        </th>           
     </tr>
         `
+        //  Up is infomration the edit
         dataList.innerHTML += createElement
             //console.log(details[index].completed)
             // add color for task which is done
@@ -123,6 +129,7 @@ function getdata() {
     let filtered = localStorageCopy.filter((el) => {
         return el.username === localStorage.username
     })
+    //brandon equal both local storage
     details = filtered;
     //console.log(filtered)
 }
@@ -182,7 +189,7 @@ function deletetask(index, e, id) {
 
 
 }
-// edit function and create edit div
+// edit function and create edit div --------------------------------------------------
 function editfun(index, e, id) {
 
     upToDateDiv.classList.add("active")
@@ -242,13 +249,17 @@ function editfun(index, e, id) {
      `
     upToDateDiv.append(div)
 
+    // use to get location of the dib one want to use (append )
+
     let inputTitleUptodate = document.querySelector("#title1")
     let inputDescriptionUptodate = document.querySelector("#description1")
     let inputDeadlineUptodate = document.querySelector("#deadline1")
     let inputTidestimatUptodate = document.querySelector("#tidestimat1")
     let inputStatusUptodate = document.querySelector("#status1")
     let inputkategoriUptodate = document.querySelector("#kategori1")
+    
 
+    // box information popup
     inputTitleUptodate.value = details[index].title
     inputDescriptionUptodate.value = details[index].description
     inputDeadlineUptodate.value = details[index].deadline
@@ -264,14 +275,14 @@ function uptodate(index, id) {
 
     dataList.innerHTML = ""
 
-
+                // for every box that is not connec to with another function we need to created a new variable to the same things
     let inputTitleUptodate = document.querySelector("#title1")
     let inputDescriptionUptodate = document.querySelector("#description1")
     let inputDeadlineUptodate = document.querySelector("#deadline1")
     let inputTidestimatUptodate = document.querySelector("#tidestimat1")
     let inputStatusUptodate = document.querySelector("#status1")
     let inputkategoriUptodate = document.querySelector("#kategori1")
-
+            // boxes after after created TO DO list
     details[index] = {
         title: inputTitleUptodate.value,
         description: inputDescriptionUptodate.value,
@@ -279,16 +290,18 @@ function uptodate(index, id) {
         Tidestimat: inputTidestimatUptodate.value,
         status: inputStatusUptodate.value,
         kategori: inputkategoriUptodate.value,
+        username: localStorage.username,
+        id: Date.now()
 
     }
 
-    //localStorage.setItem("task", JSON.stringify(details))
-    localStorage.setItem("task", JSON.stringify(localStorageCopy))
-        //console.log(localStorageCopy)
-        //getdata()
+    localStorage.setItem("task", JSON.stringify(details))
+   
     table()
 
 }
+
+//-----------------------------------------------------------------------------------------
 
 // create a new div for use this to filter and sortering
 function createNewDiv(item, index) {
@@ -320,8 +333,14 @@ function createNewDiv(item, index) {
                 el.style.color = "green"
             }
         })
+        
+
         //localStorage.setItem("task", JSON.stringify(details))
 }
+
+
+
+
 
 
 

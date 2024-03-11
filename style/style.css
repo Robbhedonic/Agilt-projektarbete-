@@ -1841,16 +1841,18 @@ input[type=submit]:hover {
   flex-direction: column;
 }
 
-main .wrapper {
-  padding: 20px 10px;
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 10px;
-  min-height: 100dvh;
+@media (min-width: 700px) {
+  main .wrapper {
+    padding: 20px 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    min-height: 100dvh;
+  }
 }
-
 .main-daily .input-wrapper {
   background-color: rgba(31, 31, 30, 0.69);
   display: flex;
@@ -2007,8 +2009,9 @@ main .wrapper {
   color: white;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 300px) {
   main .wrapper {
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
@@ -2129,14 +2132,20 @@ label {
 }
 
 @media (max-width: 600px) {
+  .main .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
   .main-daily .table {
     width: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
   }
+  .counter span {
+    font-size: 14px;
+  }
   .main-daily .table tr {
-    border: 2px solid white;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -2145,9 +2154,7 @@ label {
   .main-daily .table th {
     width: 20%;
     min-height: 100px;
-    border: 2px solid white;
     font-size: 0.8rem;
-    overflow: scroll;
   }
   .main-daily .input-container {
     width: 80%;
@@ -2307,12 +2314,12 @@ label {
 .nav-1 ul li a {
   color: white;
   font-family: Helvetica, sans-serif;
-  padding: 7px 13px;
-  border-radius: 10px;
+  padding: 14px 16px;
+  border-radius: 16px;
 }
 .nav-1 ul li a:hover {
-  background: black;
-  color: white;
+  background: white;
+  color: black;
   transition: 0.5s;
 }
 .nav-1 ul li p {
@@ -2363,8 +2370,8 @@ label {
     color: azure;
     font-size: 12px;
     min-height: 50px;
-    min-width: 100px;
-    background-color: aqua;
+    width: 100%;
+    border: 2px solid white;
   }
   .nav-1 ul li a:hover {
     background: white;
@@ -2373,8 +2380,9 @@ label {
   .nav-1 ul li {
     padding: 10px;
   }
-  .nav-1 ul li:hover {
-    color: white;
+  .nav-1 ul li a:hover {
+    color: black;
+    background: white;
   }
   .nav-1 ul li {
     display: block;
@@ -2574,7 +2582,11 @@ footer ul li a {
 }
 footer ul li :hover {
   font-weight: bolder;
-  color: white;
+  color: black;
+  background: white;
+  border-radius: 20px;
+  width: 120px;
+  padding: 10px;
 }
 footer .copyright-box {
   display: flex;
@@ -2637,10 +2649,14 @@ footer {
   box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.5);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
-  border: 1px solid white;
   border-radius: 26px;
 }
 
+@media (min-width: 857px) {
+  .nav-1 li {
+    border: 1px solid white;
+  }
+}
 iframe {
   width: 100%;
   height: 100%;
