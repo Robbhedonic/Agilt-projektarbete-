@@ -1,10 +1,4 @@
-function adddata(){
-
-
-
-
-
-    let rightContentDiv = document.querySelector(".right-content.add-task")
+let rightContentDiv = document.querySelector(".right-content.add-task")
 let icons = document.querySelectorAll(".filter-menu ul i.fa-solid")
 let upToDateDiv = document.querySelector(".right-content.uptodate")
 let closeTaskDive = document.querySelector(".right-content .top-content .close-div")
@@ -64,14 +58,24 @@ let inputkategori = document.querySelector("#kategori")
 let addBtn = document.querySelector(".btn")
 let listSection = document.querySelector(".list-section")
 let dataList = document.querySelector("#data")
-    // let tasks = JSON.parse(localStorage.getItem("task")) || [];
 let Titlevalue = inputTitle.value;
 let descriptionvalue = inputDescription.value;
 let deadlinevalue = inputDeadline.value;
 let tidestimatvalue = inputTidestimat.value;
 let statusvalue = inputStatus.value;
 let kategorivalue = inputkategori.value;
-let details = []
+// create two local storage one for filtered user and another one for all users 
+
+
+// user filter
+let details = JSON.parse(localStorage.getItem("task")) || [];
+// all users
+let localStorageCopy = JSON.parse(localStorage.getItem("task")) || [];
+// joseph created it
+let newedit = JSON.parse(localStorage.getItem("task")) || [];
+
+
+
 addBtn.addEventListener("click", createDiv)
 
 /// create table function
@@ -94,16 +98,16 @@ function table() {
             <p>action</p>
             <button id="read" onclick="readInfo('${el.title}', '${el.description}', '${el.deadline}', '${el.Tidestimat}', '${el.status}', '${el.kategori}')"><i class="fa-solid fa-eye d-icons"></i></button>
 
-            <button id="edit" onclick="editfun(${index},this)"><i class="fa-solid fa-pen-to-square d-icons"></i></button>
-            <button id="delete" onclick="deletetask(${index},this)"><i class="fa-solid fa-trash-can d-icons"></i></button>
+            <button id="edit" onclick="editfun(${index},this,${el.id})"><i class="fa-solid fa-pen-to-square d-icons"></i></button>
+            <button id="delete" onclick="deletetask(${index},this,${el.id})"><i class="fa-solid fa-trash-can d-icons"></i></button>
 
-        </th>
+        </th>           
     </tr>
         `
+        //  Up is infomration the edit
         dataList.innerHTML += createElement
             //console.log(details[index].completed)
-
-        // add color for task which is done
+            // add color for task which is done
         let textDone = document.querySelectorAll(".text-done");
 
         textDone.forEach((el) => {
@@ -115,42 +119,42 @@ function table() {
 
     })
 }
+
 getdata()
 table()
 
-// local storage funtion to get data
-function getdata() {
-    let data = localStorage.getItem("task")
-    if (data) {
-        details = JSON.parse(data)
-    } else {
-        setdata()
-    }
-}
-// local storage funtion to set data
 
-function setdata() {
-    localStorage.setItem("task", JSON.stringify(details))
+// function localstorage for filter username
+function getdata() {
+    let filtered = localStorageCopy.filter((el) => {
+        return el.username === localStorage.username
+    })
+    //brandon equal both local storage
+    details = filtered;
+    //console.log(filtered)
 }
-// create object function and push it in new array
+
+
+
 function createDiv() {
     dataList.innerHTML = ""
     let data = {
-        id: Date.now(),
-        title: inputTitle.value,
-        description: inputDescription.value,
-        deadline: inputDeadline.value,
-        Tidestimat: inputTidestimat.value,
-        status: inputStatus.value,
-        kategori: inputkategori.value,
-        completed: false,
-    }
-    details.push(data)
-    setdata()
+            id: Date.now(),
+            title: inputTitle.value,
+            description: inputDescription.value,
+            deadline: inputDeadline.value,
+            Tidestimat: inputTidestimat.value,
+            status: inputStatus.value,
+            kategori: inputkategori.value,
+            completed: false,
+            username: localStorage.username
+        }
+        // this array for all users
+    localStorageCopy.push(data);
+    localStorage.setItem("task", JSON.stringify(localStorageCopy));
+    getdata()
+
     table()
-
-
-
 
     //dataList.innerHTML = ""
     inputTitle.value = "";
@@ -158,21 +162,35 @@ function createDiv() {
     inputDeadline.value = "";
     inputTidestimat.value = "";
 
-
 }
-// delet function with index
 
-function deletetask(index) {
+// delet function with according to findindex and ther filter methog to return which is not = this index
+
+function deletetask(index, e, id) {
+    //console.log(index, details)
+    // console.log(details)
     dataList.innerHTML = ""
-    if (confirm("Are u sure that u want to delete?") === true) {
-        details.splice(index, 1)
-    }
-    setdata()
-    table()
-}
-// edit function and create edit div
-function editfun(index) {
+    let choosenitem = localStorageCopy.findIndex((ele) => {
+        return ele.id === id
+    })
+    filteritem = localStorageCopy.filter((el, ind) => {
+        return ind !== choosenitem
+    })
 
+    if (confirm("do u want to delet?") === true) {
+
+        e.parentElement.remove()
+        localStorageCopy = [...filteritem]
+        localStorage.setItem("task", JSON.stringify(localStorageCopy))
+    }
+
+    getdata()
+    table()
+
+
+}
+// edit function and create edit div --------------------------------------------------
+function editfun(index, e, id) {
 
     upToDateDiv.classList.add("active")
     upToDateDiv.innerHTML = ""
@@ -226,35 +244,45 @@ function editfun(index) {
     </div>
 
     <div class="btns">
-        <button class="btn-save" onclick="uptodate(${index})">uptodate</button>
+        <button class="btn-save" onclick="uptodate(${index},${id})">uptodate</button>
 
      `
     upToDateDiv.append(div)
+
+    // use to get location of the dib one want to use (append )
+
     let inputTitleUptodate = document.querySelector("#title1")
     let inputDescriptionUptodate = document.querySelector("#description1")
     let inputDeadlineUptodate = document.querySelector("#deadline1")
     let inputTidestimatUptodate = document.querySelector("#tidestimat1")
     let inputStatusUptodate = document.querySelector("#status1")
     let inputkategoriUptodate = document.querySelector("#kategori1")
+    
+
+    // box information popup
     inputTitleUptodate.value = details[index].title
     inputDescriptionUptodate.value = details[index].description
     inputDeadlineUptodate.value = details[index].deadline
     inputTidestimatUptodate.value = details[index].Tidestimat
     inputStatusUptodate.value = details[index].status
     inputkategoriUptodate.value = details[index].kategori
+   
 
 }
 // onclick uptodate and find selected div with index
 
-function uptodate(index) {
+function uptodate(index, id) {
+
     dataList.innerHTML = ""
+
+                // for every box that is not connec to with another function we need to created a new variable to the same things
     let inputTitleUptodate = document.querySelector("#title1")
     let inputDescriptionUptodate = document.querySelector("#description1")
     let inputDeadlineUptodate = document.querySelector("#deadline1")
     let inputTidestimatUptodate = document.querySelector("#tidestimat1")
     let inputStatusUptodate = document.querySelector("#status1")
     let inputkategoriUptodate = document.querySelector("#kategori1")
-
+            // boxes after after created TO DO list
     details[index] = {
         title: inputTitleUptodate.value,
         description: inputDescriptionUptodate.value,
@@ -262,16 +290,18 @@ function uptodate(index) {
         Tidestimat: inputTidestimatUptodate.value,
         status: inputStatusUptodate.value,
         kategori: inputkategoriUptodate.value,
+        username: localStorage.username,
+        id: Date.now()
 
     }
 
-    setdata()
+    localStorage.setItem("task", JSON.stringify(details))
+   
     table()
-        //console.log(details)
+
 }
 
-
-
+//-----------------------------------------------------------------------------------------
 
 // create a new div for use this to filter and sortering
 function createNewDiv(item, index) {
@@ -298,13 +328,19 @@ function createNewDiv(item, index) {
         // add color for task which is done
     let textDone = document.querySelectorAll(".text-done")
     textDone.forEach((el) => {
-        if (el.innerHTML === "completed") {
-            el.classList.add("done")
-            el.style.color = "green"
-        }
-    })
+            if (el.innerHTML === "completed") {
+                el.classList.add("done")
+                el.style.color = "green"
+            }
+        })
+        
 
+        //localStorage.setItem("task", JSON.stringify(details))
 }
+
+
+
+
 
 
 
@@ -355,9 +391,10 @@ function filterfunByStatus() {
             }
 
         })
-        setdata()
-
-
+        localStorage.setItem("task", JSON.stringify(localStorageCopy));
+        //getdata()
+        // setdata()
+        // localStorage.setItem("task", JSON.stringify(details))
     })
 }
 filterfunByStatus()
@@ -372,44 +409,47 @@ function filterfunByKategori() {
     checkboxs.forEach((box) => {
 
         box.addEventListener("click", (e) => {
-            dataList.innerHTML = ""
-            if (e.target.checked == true) {
-                console.log("hi")
                 dataList.innerHTML = ""
-                checkboxvalue.push(box.value)
-
-                checkboxvalue.forEach((el) => {
+                if (e.target.checked == true) {
+                    console.log("hi")
                     dataList.innerHTML = ""
+                    checkboxvalue.push(box.value)
 
-                    let filteritem = details.filter((el) => {
-                        // console.log(el)
-                        return (checkboxvalue.includes(el.kategori))
+                    checkboxvalue.forEach((el) => {
+                        dataList.innerHTML = ""
 
+                        let filteritem = details.filter((el) => {
+                            // console.log(el)
+                            return (checkboxvalue.includes(el.kategori))
+
+                        })
+                        filteritem.forEach((item, index) => {
+                            createNewDiv(item, index)
+                        })
                     })
-                    filteritem.forEach((item, index) => {
+                }
+                // delete the files which i didnot need
+                else {
+                    dataList.innerHTML = ""
+                    checkboxvalue = checkboxvalue.filter((el) => {
+                        return el !== e.target.value
+                    })
+                    let deleteFiltered = details.filter((element) => {
+                        //console.log(element)
+                        return (checkboxvalue.includes(element.kategori))
+                    })
+                    deleteFiltered.forEach((item, index) => {
                         createNewDiv(item, index)
                     })
-                })
-            }
-            // delete the files which i didnot need
-            else {
-                dataList.innerHTML = ""
-                checkboxvalue = checkboxvalue.filter((el) => {
-                    return el !== e.target.value
-                })
-                let deleteFiltered = details.filter((element) => {
-                    //console.log(element)
-                    return (checkboxvalue.includes(element.kategori))
-                })
-                deleteFiltered.forEach((item, index) => {
-                    createNewDiv(item, index)
-                })
-            }
+                }
 
 
-        })
+            })
+            //localStorage.setItem("task", JSON.stringify(localStorageCopy));
+        getdata()
+            // setdata()
+            // localStorage.setItem("task", JSON.stringify(details))
 
-        setdata()
     })
 }
 
@@ -424,52 +464,56 @@ let sorteringCheckbox = document.querySelectorAll(".deadline")
 function sorteringToDo() {
 
     sorteringCheckbox.forEach((box) => {
-        box.addEventListener("click", (e) => {
-            dataList.innerHTML = ""
+            box.addEventListener("click", (e) => {
+                dataList.innerHTML = ""
 
-            if (box.value === "fallande") {
-                let sortdeadline = details.toSorted((a, b) => {
-                    // return a.tidestimat - b.tidestimat
-                    if (a.deadline > b.deadline) {
-                        return -1;
-                    }
-                    if (a.deadline < b.deadline) {
-                        return 1;
-                    }
-                    return 0;
-                })
+                if (box.value === "fallande") {
+                    let sortdeadline = details.toSorted((a, b) => {
+                        // return a.tidestimat - b.tidestimat
+                        if (a.deadline > b.deadline) {
+                            return -1;
+                        }
+                        if (a.deadline < b.deadline) {
+                            return 1;
+                        }
+                        return 0;
+                    })
 
-                sortdeadline.forEach((item, index) => {
+                    sortdeadline.forEach((item, index) => {
 
-                    createNewDiv(item, index)
-
-
-                })
-            } else if (box.value === "stigande") {
-                let sortdeadline = details.toSorted((a, b) => {
-                    if (a.deadline < b.deadline) {
-                        return -1;
-                    }
-                    if (a.deadline > b.deadline) {
-                        return 1;
-                    }
-                    return 0;
-                })
+                        createNewDiv(item, index)
 
 
-                sortdeadline.forEach((item, index) => {
+                    })
+                } else if (box.value === "stigande") {
+                    let sortdeadline = details.toSorted((a, b) => {
+                        if (a.deadline < b.deadline) {
+                            return -1;
+                        }
+                        if (a.deadline > b.deadline) {
+                            return 1;
+                        }
+                        return 0;
+                    })
 
-                    createNewDiv(item, index)
+
+                    sortdeadline.forEach((item, index) => {
+
+                        createNewDiv(item, index)
 
 
-                })
-            }
+                    })
+                }
+
+            })
+
 
         })
+        //localStorage.setItem("task", JSON.stringify(localStorageCopy));
+    getdata()
+        // setdata()
+        // localStorage.setItem("task", JSON.stringify(details))
 
-
-    })
-    setdata()
 }
 
 sorteringToDo()
@@ -479,45 +523,49 @@ let tidestimatSort = document.querySelectorAll(".tidestimat")
 
 function sorteringMedTids() {
     tidestimatSort.forEach((box) => {
-        box.addEventListener("click", (e) => {
-            dataList.innerHTML = ""
+            box.addEventListener("click", (e) => {
+                dataList.innerHTML = ""
 
-            if (box.value === "fall") {
-                let sortdeadline = details.toSorted((a, b) => {
-                    if (a.Tidestimat > b.Tidestimat) {
-                        return -1;
-                    }
-                    if (a.Tidestimat < b.Tidestimat) {
-                        return 1;
-                    }
-                    return 0;
-                })
+                if (box.value === "fall") {
+                    let sortdeadline = details.toSorted((a, b) => {
+                        if (a.Tidestimat > b.Tidestimat) {
+                            return -1;
+                        }
+                        if (a.Tidestimat < b.Tidestimat) {
+                            return 1;
+                        }
+                        return 0;
+                    })
 
-                sortdeadline.forEach((item, index) => {
-                    createNewDiv(item, index)
+                    sortdeadline.forEach((item, index) => {
+                        createNewDiv(item, index)
 
 
-                })
-            } else if (box.value === "stig") {
-                let sortdeadline = details.toSorted((a, b) => {
-                    if (a.Tidestimat < b.Tidestimat) {
-                        return -1;
-                    }
-                    if (a.Tidestimat > b.Tidestimat) {
-                        return 1;
-                    }
-                    return 0;
-                })
+                    })
+                } else if (box.value === "stig") {
+                    let sortdeadline = details.toSorted((a, b) => {
+                        if (a.Tidestimat < b.Tidestimat) {
+                            return -1;
+                        }
+                        if (a.Tidestimat > b.Tidestimat) {
+                            return 1;
+                        }
+                        return 0;
+                    })
 
-                sortdeadline.forEach((item, index) => {
-                    createNewDiv(item, index)
-                })
-            }
+                    sortdeadline.forEach((item, index) => {
+                        createNewDiv(item, index)
+                    })
+                }
+
+            })
 
         })
+        // localStorage.setItem("task", JSON.stringify(localStorageCopy));
+    getdata()
+        // setdata()
+        //  localStorage.setItem("task", JSON.stringify(details))
 
-    })
-    setdata()
 }
 sorteringMedTids()
     // read function to show div
@@ -540,9 +588,9 @@ function readInfo(title, description, deadline, Tidestimat, status, kategori) {
 let lightWordDiv = document.querySelector(".light-word");
 let word = "ToDoList";
 let arr = Array.from(word);
-console.log(arr)
+//console.log(arr) 
 arr.forEach((ele) => {
-    console.log(ele)
+    //console.log(ele)
     let newDiv = document.createElement("div");
     newDiv.className = "word-div"
     let p = document.createElement("p")
@@ -550,17 +598,3 @@ arr.forEach((ele) => {
     newDiv.append(p)
     lightWordDiv.append(newDiv)
 })
-    
-
-
-
-
-
-
-
-
-}
-
-
-
-
