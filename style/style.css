@@ -948,7 +948,7 @@ hr {
   margin-left: 30px;
 }
 .profile .card-profile {
-  max-width: 600px;
+  max-width: 700px;
   padding: 40px;
   min-width: 250px;
   border-radius: 15px;
@@ -2203,8 +2203,8 @@ label {
   align-items: center;
   border: 2px solid white;
   height: 40px;
-  animation: glowdiv 4s linear infinite;
-  -webkit-animation: glowdiv 4s linear infinite;
+  animation: glowdiv 4s white;
+  -webkit-animation: glowdiv 1s white;
 }
 
 .light-word .word-div p {
@@ -2293,6 +2293,54 @@ label {
     opacity: 1;
   }
 }
+.half-color {
+  color: rgb(0, 213, 255);
+}
+
+.homebtn {
+  font-family: "Poppins";
+  padding: 8px 18px;
+  margin: 16px 12px;
+  font-size: 20px;
+  background: transparent;
+  outline: none;
+  border: 1px solid white;
+}
+.homebtn a {
+  color: white;
+}
+.homebtn:hover {
+  background: white;
+}
+.homebtn:hover a {
+  color: black;
+}
+
+.bgAnimation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  grid-template-rows: repeat(20, 1fr);
+  filter: saturate(2);
+  overflow: hidden;
+}
+
+.colorBox {
+  z-index: 1;
+  filter: brightness(1.1);
+  transition: 2s ease;
+  position: relative;
+  margin: 2px;
+}
+.colorBox:hover {
+  background: rgb(70, 200, 252);
+  transition-duration: 0s;
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -2441,12 +2489,30 @@ label.logo {
           backdrop-filter: blur(10px);
   min-width: 280px;
   max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border-radius: 26px;
   padding: 50px;
 }
-.first-section .presentation-index-left h1 {
-  padding-bottom: 20px;
-  font-size: 80px;
+@media (min-width: 857px) {
+  .first-section .presentation-index-left h1 {
+    padding-bottom: 20px;
+    font-size: 80px;
+  }
+}
+@media (min-width: 644px) {
+  .first-section .presentation-index-left h1 {
+    padding-bottom: 20px;
+    font-size: 60px;
+  }
+}
+@media (max-width: 400px) {
+  .first-section .presentation-index-left h1 {
+    padding-bottom: 20px;
+    font-size: 30px;
+  }
 }
 .first-section .presentation-index-left h3 {
   padding-bottom: 10px;

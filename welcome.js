@@ -1,6 +1,6 @@
 if (NameofUser) {
     welcomeText.classList.add("show")
-    welcomeText.innerHTML = `Welcome ${NameofUser}!`
+    welcomeText.innerHTML = `Welcome to ${NameofUser}! We're glad you're here. Explore, connect, and enjoy!`
 
 
 } else {

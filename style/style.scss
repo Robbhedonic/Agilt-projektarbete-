@@ -7,6 +7,7 @@
 @import "./loader.scss";
 @import "./main-style";
 @import "./light";
+@import "./animation-bg";
 
 *{
     margin: 0;
@@ -187,6 +188,7 @@
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-around;
+   
     .presentation-index-left{
 
         background: rgba(123, 123, 123, 0.1);
@@ -196,15 +198,38 @@
         min-width: 280px;
     
         max-width: 800px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center ;
        
      
         border-radius: $border-radius;
         padding: 50px;
+        @media(min-width:857px) {
+            h1 {
+                    padding-bottom: 20px;
+                    font-size: 80px;
+                }
 
-        h1{
-            padding-bottom: 20px;
-            font-size: 80px;
         }
+         @media(min-width:644px) {
+            h1 {
+            padding-bottom: 20px;
+            font-size: 60px;
+                }
+        
+            }
+                 @media(max-width:400px) {
+                     h1 {
+                         padding-bottom: 20px;
+                         font-size: 30px;
+                     }
+        
+                 }
+
+
+       
         h3{
             padding-bottom: 10px;
             color: $secondary-text-color;
