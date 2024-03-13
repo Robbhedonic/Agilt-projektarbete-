@@ -5,17 +5,23 @@
 }
 
 .main-weather-a {
-    background: black;
+    /* background: black; */
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     min-height: 100dvh;
-    gap: 20px
+    gap: 20px;
+    background-image: url(images/weather2.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .card {
     width: 100%;
     max-width: 470px;
-    background: linear-gradient(135deg, #00feba, #5b548a);
     color: #fff;
     margin: 100px auto 0;
     border-radius: 20px;
@@ -25,7 +31,11 @@
     align-items: center;
     justify-content: space-between;
     flex-direction: column;
-    gap: 20px
+    gap: 20px;
+    background: rgba(76, 76, 76, 0.738);
+    box-shadow: 0 4px 30px rgba(75, 75, 75, 0.543);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .main-section {
@@ -142,7 +152,6 @@
 
 .daily-weather .section {
     width: 35%;
-    background: linear-gradient(135deg, #00feba, #5b548a);
     height: 500px;
     display: flex;
     flex-direction: column;
@@ -157,6 +166,10 @@
     gap: 20px;
     color: white;
     text-transform: capitalize;
+    background-color: rgba(217, 216, 216, 0.245);
+    box-shadow: 0 4px 30px rgba(75, 75, 75, 0.543);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .daily-weather .section .weather-icon {
@@ -213,7 +226,12 @@
     align-items: center;
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.314);
+    /* background-color: rgba(0, 0, 0, 0.314); */
+    background-image: url(images/weather-bg.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .daily-weather .section {
@@ -321,7 +339,16 @@
         width: 20%;
     }
 }
-.app-w-icon{
-    font-size: 50px;
+
+.app-w-icon {
+    font-size: 20px;
     color: white;
+}
+
+.back-weather {
+    width: 140px;
+    height: 60px;
+    border-radius: 20px;
+    background: none;
+    border-radius: solid white 2px;
 }

@@ -1,47 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/2b9cdc1c9a.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/2b9cdc1c9a.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="weather.css" />
     <title>Document</title>
-  </head>
+</head>
 
-  <body>
+<body>
     <main class="main-weather-a">
-      <h1>weather</h1>
-      <div class="card">
-        <div class="search">
-          <input
-            type="text"
-            placeholder="enter city name"
-            spellcheck="false"
-            class="input"
-          />
-          <button class="btn"><img src="images/search.png" alt="" /></button>
+        <div class="card">
+            <div class="search">
+                <input type="text" placeholder="enter city name" spellcheck="false" class="input" />
+                <button class="btn"><img src="images/search.png" alt="" /></button>
+            </div>
+            <div class="weather"></div>
+            <p class="link">To See More Forecast Click Here</p>
         </div>
-        <div class="weather"></div>
-        <p class="link">To See More Forecast Click Here</p>
-      </div>
-      <div class="forecast-container">
-        <div class="forecast">
-          <div class="daily-weather" id="daily-weather"></div>
-          <div class="daily-forecast-close">
-            <i class="fa-solid fa-xmark"></i>
-          </div>
-          <i class="fa-solid fa-chevron-right"></i>
-          <i class="fa-solid fa-chevron-left"></i>
+        <div class="forecast-container">
+            <div class="forecast">
+                <div class="daily-weather" id="daily-weather"></div>
+                <div class="daily-forecast-close">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                <i class="fa-solid fa-chevron-right"></i>
+                <i class="fa-solid fa-chevron-left"></i>
+            </div>
         </div>
-      </div>
-      <a href="user.html"><i class="fa-solid fa-rotate-left app-w-icon"></i></a>
+        <a href="user.html"><i class="fa-solid fa-rotate-left app-w-icon"></i></a>
     </main>
 
     <script src="weather.js"></script>
-  </body>
+</body>
+
 </html>
