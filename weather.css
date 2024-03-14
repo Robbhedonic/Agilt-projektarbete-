@@ -5,21 +5,13 @@
 }
 
 .main-weather-a {
-    /* /* background: black; */
+    /* background: black; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    justify-content: center;
-    align-items: center;
     min-height: 100dvh;
     gap: 20px;
-    background-image: url(images/weather2.jpeg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    ;
     background-image: url(images/weather2.jpeg);
     background-position: center;
     background-repeat: no-repeat;
@@ -40,11 +32,6 @@
     justify-content: space-between;
     flex-direction: column;
     gap: 20px;
-    background: rgba(76, 76, 76, 0.738);
-    box-shadow: 0 4px 30px rgba(75, 75, 75, 0.543);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(5px);
-    ;
     background: rgba(76, 76, 76, 0.738);
     box-shadow: 0 4px 30px rgba(75, 75, 75, 0.543);
     backdrop-filter: blur(10px);
@@ -183,10 +170,6 @@
     box-shadow: 0 4px 30px rgba(75, 75, 75, 0.543);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    background-color: rgba(217, 216, 216, 0.245);
-    box-shadow: 0 4px 30px rgba(75, 75, 75, 0.543);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
 }
 
 .daily-weather .section .weather-icon {
@@ -243,12 +226,7 @@
     align-items: center;
     height: 100%;
     width: 100%;
-    /* /* background-color: rgba(0, 0, 0, 0.314); */
-    background-image: url(images/weather-bg.jpeg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+    /* background-color: rgba(0, 0, 0, 0.314); */
     background-image: url(images/weather-bg.jpeg);
     background-position: center;
     background-repeat: no-repeat;
@@ -365,14 +343,6 @@
 .app-w-icon {
     font-size: 20px;
     color: white;
-}
-
-.back-weather {
-    width: 140px;
-    height: 60px;
-    border-radius: 20px;
-    background: none;
-    border-radius: solid white 2px;
 }
 
 .back-weather {

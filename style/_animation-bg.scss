@@ -1,33 +1,14 @@
-<<<<<<< HEAD
-.half-color{
-    color: rgb(0, 213, 255);
-}
-
-.homebtn{
-=======
 .half-color {
     color: rgb(0, 213, 255);
 }
 
 .homebtn {
->>>>>>> f6e1e13acf0e6e9f5ad0824d752db613b877d659
     font-family: 'Poppins';
     padding: 8px 18px;
     margin: 16px 12px;
     font-size: 20px;
     background: transparent;
     outline: none;
-<<<<<<< HEAD
-   
-
-    border: 1px solid white;
-    a{
-        color: white;
-    }
-    &:hover{
-        background: white;
-        a{
-=======
 
 
     border: 1px solid white;
@@ -40,34 +21,18 @@
         background: white;
 
         a {
->>>>>>> f6e1e13acf0e6e9f5ad0824d752db613b877d659
             color: black;
         }
     }
 }
 
-<<<<<<< HEAD
-.bgAnimation{
-=======
 .bgAnimation {
->>>>>>> f6e1e13acf0e6e9f5ad0824d752db613b877d659
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
     display: grid;
-<<<<<<< HEAD
-    grid-template-columns: repeat(20,1fr);
-    grid-template-rows: repeat(20,1fr);
-  
-    filter: saturate(2);
-    overflow: hidden;
-}
-.colorBox{
-    z-index: 1;
-    filter: brightness(1.1) ;
-=======
     grid-template-columns: repeat(20, 1fr);
     grid-template-rows: repeat(20, 1fr);
 
@@ -78,16 +43,11 @@
 .colorBox {
     z-index: 1;
     filter: brightness(1.1);
->>>>>>> f6e1e13acf0e6e9f5ad0824d752db613b877d659
     transition: 2s ease;
     position: relative;
     margin: 2px;
 
-<<<<<<< HEAD
-    &:hover{
-=======
     &:hover {
->>>>>>> f6e1e13acf0e6e9f5ad0824d752db613b877d659
         background: rgb(70, 200, 252);
         transition-duration: 0s;
     }

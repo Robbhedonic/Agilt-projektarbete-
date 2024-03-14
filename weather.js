@@ -11,9 +11,6 @@ let weekday = ["Sunday", "Monday", "Tuesday", "Wedesday", "Thursday",
     "Freday", "Saturday"
 ]
 
-;
-
-
 
 let getdata = async(apilink) => {
         let data = await fetch(apilink)
@@ -47,8 +44,6 @@ let getWeatherDetails = (name, lat, lon) => {
                         // NAMR OF DAY
                         let d = new Date(element.dt_txt)
                         let dayname = weekday[d.getDay()]
-
-
 
                         //console.log(element.weather[0].icon)
                         let temp = String(Math.round(element.main.temp - 273.15));
@@ -212,8 +207,6 @@ function showforecastDivs(forecastDivs) {
             currentIndex++
             leftBtn.classList.remove("stop")
 
-            leftBtn.classList.remove("stop")
-
             addclass()
         }
 
@@ -224,10 +217,8 @@ function showforecastDivs(forecastDivs) {
             e.target.classList.add("stop")
             rigthBtn.classList.remove("stop")
 
-
         } else {
             currentIndex--
-            rigthBtn.classList.remove("stop")
             rigthBtn.classList.remove("stop")
 
             addclass()
@@ -249,7 +240,8 @@ dailyForecastClose.addEventListener("click", () => {
     forecastContainer.classList.remove("show")
     window.location.reload();
 })
-let backbtn = document.querySelector(".back-weather");
-backbtn.addEventListener("click", () => {
-    window.location = "user.html"
+
+let goback=document.querySelector(".back-weather")
+goback.addEventListener("click",()=>{
+    window.location="user.html"
 })

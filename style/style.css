@@ -953,7 +953,7 @@ hr {
   margin-left: 30px;
 }
 .profile .card-profile {
-  max-width: 700px;
+  max-width: 600px;
   padding: 40px;
   min-width: 250px;
   border-radius: 15px;
@@ -1066,11 +1066,7 @@ hr {
   height: 300px;
   transform-style: preserve-3d;
   transform: perspective(500px) rotateY(60deg);
-  z-index: -1;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  z-index: -5;
 }
 .loader span {
   position: absolute;
@@ -2208,8 +2204,8 @@ label {
   align-items: center;
   border: 2px solid white;
   height: 40px;
-  animation: glowdiv 4s white;
-  -webkit-animation: glowdiv 1s white;
+  animation: glowdiv 4s linear infinite;
+  -webkit-animation: glowdiv 4s linear infinite;
 }
 
 .light-word .word-div p {
@@ -2494,30 +2490,12 @@ label.logo {
           backdrop-filter: blur(10px);
   min-width: 280px;
   max-width: 800px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   border-radius: 26px;
   padding: 50px;
 }
-@media (min-width: 857px) {
-  .first-section .presentation-index-left h1 {
-    padding-bottom: 20px;
-    font-size: 80px;
-  }
-}
-@media (min-width: 644px) {
-  .first-section .presentation-index-left h1 {
-    padding-bottom: 20px;
-    font-size: 60px;
-  }
-}
-@media (max-width: 400px) {
-  .first-section .presentation-index-left h1 {
-    padding-bottom: 20px;
-    font-size: 30px;
-  }
+.first-section .presentation-index-left h1 {
+  padding-bottom: 20px;
+  font-size: 80px;
 }
 .first-section .presentation-index-left h3 {
   padding-bottom: 10px;
