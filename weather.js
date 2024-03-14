@@ -12,9 +12,7 @@ let weekday = ["Sunday", "Monday", "Tuesday", "Wedesday", "Thursday",
 ]
 
 ;
-let weekday = ["Sunday", "Monday", "Tuesday", "Wedesday", "Thursday",
-    "Freday", "Saturday"
-]
+
 
 
 let getdata = async(apilink) => {
@@ -50,9 +48,7 @@ let getWeatherDetails = (name, lat, lon) => {
                         let d = new Date(element.dt_txt)
                         let dayname = weekday[d.getDay()]
 
-                        // NAMR OF DAY
-                        let d = new Date(element.dt_txt)
-                        let dayname = weekday[d.getDay()]
+
 
                         //console.log(element.weather[0].icon)
                         let temp = String(Math.round(element.main.temp - 273.15));
