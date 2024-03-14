@@ -240,3 +240,7 @@ dailyForecastClose.addEventListener("click", () => {
     forecastContainer.classList.remove("show")
     window.location.reload();
 })
+let backbtn = document.querySelector(".back-weather");
+backbtn.addEventListener("click", () => {
+    window.location = "user.html"
+})
