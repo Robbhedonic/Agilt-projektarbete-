@@ -187,20 +187,16 @@
     line-height: 21px;
     /*border: solid yellow 2px;*/
 
-
+/*
     background: transparent;
     box-shadow: -15px -15px 15px rgb(39, 40, 57, 0.2),
                  15px 15px 15px rgba(0, 0, 0, 0.1),
                 inset -5px -5px 5px rgb(39, 40, 57, 0.1),
                 inset 5px 5px 5px rgba(0, 0, 0, 0.2)
                  ;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);*/
 
-    &:hover{
-        background: transparent;
-        box-shadow:-15px -15px 15px rgb(39, 40, 57, 0.2),
-            15px 15px 15px rgba(0, 0, 0, 0.1);
-    }
+
 
 }
 
@@ -238,7 +234,7 @@
                 color: $primary-text-color;
                 text-align: center;
                 width: 100px;
-                border: none;
+                border: 1px solid white;
             }
     
     
@@ -256,6 +252,13 @@
         flex-direction: row;
         justify-content: center;
         align-items: start;
+        .btn-p-b {
+                color: white;
+        
+                &:hover {
+                    background: rgb(26, 26, 50);
+                }
+            }
 
 
         .btn-p-a {
@@ -270,8 +273,13 @@
                     inset -5px -5px 5px rgb(39, 40, 57, 0.1),
                     inset 5px 5px 5px rgba(0, 0, 0, 0.2);
                 backdrop-filter: blur(10px);
-                border: none;
+              
+                &:hover{
+                    background: black;
+                }
+               
     
+                
             }
         p {
             margin: 7px 20px 0px ;
@@ -282,9 +290,7 @@
         
             
         }
-        .btn-p-b{
-            color: white;
-        }
+        
     }
 }
 

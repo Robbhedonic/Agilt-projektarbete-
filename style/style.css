@@ -698,14 +698,14 @@ p .session {
   color: white;
   line-height: 21px;
   /*border: solid yellow 2px;*/
-  background: transparent;
-  box-shadow: -15px -15px 15px rgba(39, 40, 57, 0.2), 15px 15px 15px rgba(0, 0, 0, 0.1), inset -5px -5px 5px rgba(39, 40, 57, 0.1), inset 5px 5px 5px rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-}
-.reset:hover, .pause:hover, .start:hover, .sumit:hover {
-  background: transparent;
-  box-shadow: -15px -15px 15px rgba(39, 40, 57, 0.2), 15px 15px 15px rgba(0, 0, 0, 0.1);
+  /*
+      background: transparent;
+      box-shadow: -15px -15px 15px rgb(39, 40, 57, 0.2),
+                   15px 15px 15px rgba(0, 0, 0, 0.1),
+                  inset -5px -5px 5px rgb(39, 40, 57, 0.1),
+                  inset 5px 5px 5px rgba(0, 0, 0, 0.2)
+                   ;
+      backdrop-filter: blur(10px);*/
 }
 
 .form-pomodoro {
@@ -735,7 +735,7 @@ p .session {
   color: white;
   text-align: center;
   width: 100px;
-  border: none;
+  border: 1px solid white;
 }
 .form-pomodoro .inputs label {
   font-size: 16px;
@@ -747,6 +747,12 @@ p .session {
   justify-content: center;
   align-items: start;
 }
+.form-pomodoro .btn-save-s .btn-p-b {
+  color: white;
+}
+.form-pomodoro .btn-save-s .btn-p-b:hover {
+  background: rgb(26, 26, 50);
+}
 .form-pomodoro .btn-save-s .btn-p-a {
   width: 100px;
   height: 100px;
@@ -757,16 +763,15 @@ p .session {
   box-shadow: -15px -15px 15px rgba(39, 40, 57, 0.2), 15px 15px 15px rgba(0, 0, 0, 0.1), inset -5px -5px 5px rgba(39, 40, 57, 0.1), inset 5px 5px 5px rgba(0, 0, 0, 0.2);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
-  border: none;
+}
+.form-pomodoro .btn-save-s .btn-p-a:hover {
+  background: black;
 }
 .form-pomodoro .btn-save-s p {
   margin: 7px 20px 0px;
   font-size: 8px;
   color: rgb(255, 255, 255);
   text-align: center;
-}
-.form-pomodoro .btn-save-s .btn-p-b {
-  color: white;
 }
 
 .danger {

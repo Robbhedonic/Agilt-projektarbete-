@@ -11,6 +11,11 @@ let weekday = ["Sunday", "Monday", "Tuesday", "Wedesday", "Thursday",
     "Freday", "Saturday"
 ]
 
+;
+let weekday = ["Sunday", "Monday", "Tuesday", "Wedesday", "Thursday",
+    "Freday", "Saturday"
+]
+
 
 let getdata = async(apilink) => {
         let data = await fetch(apilink)
@@ -41,6 +46,10 @@ let getWeatherDetails = (name, lat, lon) => {
 
 
                     filterDays.forEach((element, index) => {
+                        // NAMR OF DAY
+                        let d = new Date(element.dt_txt)
+                        let dayname = weekday[d.getDay()]
+
                         // NAMR OF DAY
                         let d = new Date(element.dt_txt)
                         let dayname = weekday[d.getDay()]
@@ -207,6 +216,8 @@ function showforecastDivs(forecastDivs) {
             currentIndex++
             leftBtn.classList.remove("stop")
 
+            leftBtn.classList.remove("stop")
+
             addclass()
         }
 
@@ -217,8 +228,10 @@ function showforecastDivs(forecastDivs) {
             e.target.classList.add("stop")
             rigthBtn.classList.remove("stop")
 
+
         } else {
             currentIndex--
+            rigthBtn.classList.remove("stop")
             rigthBtn.classList.remove("stop")
 
             addclass()
