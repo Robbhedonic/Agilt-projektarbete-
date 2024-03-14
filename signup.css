@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 
-body.oo {
-    background-image: url(/images/sign-up-bg.jpg);
+.oo {
+    background-image: url(images/sign-up-bg.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

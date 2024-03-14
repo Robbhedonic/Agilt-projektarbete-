@@ -10,6 +10,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    justify-content: center;
+    align-items: center;
     min-height: 100dvh;
     gap: 20px;
     background-image: url(images/weather2.jpeg);
@@ -343,6 +345,14 @@
 .app-w-icon {
     font-size: 20px;
     color: white;
+}
+
+.back-weather {
+    width: 140px;
+    height: 60px;
+    border-radius: 20px;
+    background: none;
+    border-radius: solid white 2px;
 }
 
 .back-weather {
